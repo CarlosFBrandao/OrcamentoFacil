@@ -8,14 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace OrcamentoFacil.Telas
+namespace OrcamentoFacil
 {
-    public partial class frmClientes : Form
+    public partial class frmTabUnidadeMedida : Form
     {
-        public frmClientes()
+        public frmTabUnidadeMedida()
         {
             InitializeComponent();
         }
-
     }
 }

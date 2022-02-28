@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace OrcamentoFacil.Telas
 {
-    public partial class frmOrcamentos : Form
+    public partial class frmTabProduto : Form
     {
-        public frmOrcamentos()
+        public frmTabProduto()
         {
             InitializeComponent();
         }
 
-        private void AceitarNumeros(KeyPressEventArgs e)
+        private void txtSigla_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == '.' || e.KeyChar == ',')
             {
@@ -36,21 +36,6 @@ namespace OrcamentoFacil.Telas
             {
                 e.Handled = true;
             }
-        }
-
-        private void txtValorProd_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            AceitarNumeros(e);
-        }
-
-        private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            AceitarNumeros(e);
-        }
-
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            AceitarNumeros(e);
         }
     }
 }

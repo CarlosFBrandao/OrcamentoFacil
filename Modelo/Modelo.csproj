@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Endereco.cs" />
+    <Compile Include="ModeloCliente.cs" />
+    <Compile Include="ModeloEmpresa.cs" />
+    <Compile Include="ModeloLancamento.cs" />
+    <Compile Include="ModeloProduto.cs" />
+    <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

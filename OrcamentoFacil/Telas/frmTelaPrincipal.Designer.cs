@@ -191,7 +191,7 @@ namespace Facil
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.47059F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.52941F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 464F));
+            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 465F));
             this.tableButtonsManipulação.Controls.Add(this.btnSalvar, 0, 0);
             this.tableButtonsManipulação.Controls.Add(this.btnCancelar, 1, 0);
             this.tableButtonsManipulação.Controls.Add(this.btnExcluir, 2, 0);
@@ -228,7 +228,7 @@ namespace Facil
             // 
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(93, 3);
+            this.btnExcluir.Location = new System.Drawing.Point(92, 3);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(44, 37);
             this.btnExcluir.TabIndex = 2;
@@ -259,6 +259,7 @@ namespace Facil
             this.Name = "frmTelaPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orçamento Fácil";
+            this.Load += new System.EventHandler(this.frmTelaPrincipal_Load);
             this.panelMenu.ResumeLayout(false);
             this.tableButtonsManipulação.ResumeLayout(false);
             this.ResumeLayout(false);

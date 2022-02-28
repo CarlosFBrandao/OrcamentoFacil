@@ -81,5 +81,11 @@ namespace
             FormShow(new frmRelatorios());
             ActiveButton(btnRelatorios);
         }
+
+        private void frmTelaPrincipal_Load(object sender, EventArgs e)
+        {
+            FormShow(new frmHome());
+            ActiveButton(btnHome);
+        }
     }
 }

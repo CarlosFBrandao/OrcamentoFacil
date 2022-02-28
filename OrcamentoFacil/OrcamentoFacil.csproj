@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Telas\frmTabUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTabUnidadeMedida.Designer.cs">
+      <DependentUpon>frmTabUnidadeMedida.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +88,12 @@
     <Compile Include="Telas\frmRelatorios.Designer.cs">
       <DependentUpon>frmRelatorios.cs</DependentUpon>
     </Compile>
+    <Compile Include="Telas\frmTabProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTabProduto.Designer.cs">
+      <DependentUpon>frmTabProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Telas\frmTelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Telas\frmTabUnidadeMedida.resx">
+      <DependentUpon>frmTabUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -117,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\frmRelatorios.resx">
       <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmTabProduto.resx">
+      <DependentUpon>frmTabProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Telas\frmTelaPrincipal.resx">
       <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
