@@ -16,7 +16,7 @@ namespace OrcamentoFacil
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Facil.frmTelaPrincipal());
+            Application.Run(new frmTelaPrincipal());
         }
     }
 }

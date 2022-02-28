@@ -44,15 +44,15 @@ namespace OrcamentoFacil.Telas
             this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValorBruto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDesconto = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtValorLiquido = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboParcelas = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtValorParcelas = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnImprimir = new System.Windows.Forms.Button();
@@ -235,18 +235,18 @@ namespace OrcamentoFacil.Telas
             this.dataGridView2.Size = new System.Drawing.Size(550, 365);
             this.dataGridView2.TabIndex = 25;
             // 
-            // textBox1
+            // txtValorBruto
             // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(585, 225);
-            this.textBox1.MaxLength = 10;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(269, 19);
-            this.textBox1.TabIndex = 27;
+            this.txtValorBruto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtValorBruto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorBruto.Enabled = false;
+            this.txtValorBruto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorBruto.ForeColor = System.Drawing.Color.White;
+            this.txtValorBruto.Location = new System.Drawing.Point(585, 225);
+            this.txtValorBruto.MaxLength = 10;
+            this.txtValorBruto.Name = "txtValorBruto";
+            this.txtValorBruto.Size = new System.Drawing.Size(269, 19);
+            this.txtValorBruto.TabIndex = 27;
             // 
             // label6
             // 
@@ -259,18 +259,18 @@ namespace OrcamentoFacil.Telas
             this.label6.TabIndex = 26;
             this.label6.Text = "Valor Total Bruto:";
             // 
-            // textBox2
+            // txtDesconto
             // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(585, 278);
-            this.textBox2.MaxLength = 10;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(269, 19);
-            this.textBox2.TabIndex = 29;
-            this.textBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox2_KeyPress);
+            this.txtDesconto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDesconto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesconto.ForeColor = System.Drawing.Color.White;
+            this.txtDesconto.Location = new System.Drawing.Point(585, 278);
+            this.txtDesconto.MaxLength = 10;
+            this.txtDesconto.Name = "txtDesconto";
+            this.txtDesconto.Size = new System.Drawing.Size(269, 19);
+            this.txtDesconto.TabIndex = 29;
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
             // 
             // label7
             // 
@@ -283,18 +283,18 @@ namespace OrcamentoFacil.Telas
             this.label7.TabIndex = 28;
             this.label7.Text = "Desconto(%)";
             // 
-            // textBox3
+            // txtValorLiquido
             // 
-            this.textBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(585, 331);
-            this.textBox3.MaxLength = 10;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(269, 19);
-            this.textBox3.TabIndex = 31;
+            this.txtValorLiquido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtValorLiquido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorLiquido.Enabled = false;
+            this.txtValorLiquido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorLiquido.ForeColor = System.Drawing.Color.White;
+            this.txtValorLiquido.Location = new System.Drawing.Point(585, 331);
+            this.txtValorLiquido.MaxLength = 10;
+            this.txtValorLiquido.Name = "txtValorLiquido";
+            this.txtValorLiquido.Size = new System.Drawing.Size(269, 19);
+            this.txtValorLiquido.TabIndex = 31;
             // 
             // label8
             // 
@@ -307,13 +307,13 @@ namespace OrcamentoFacil.Telas
             this.label8.TabIndex = 30;
             this.label8.Text = "Valor Total Líquido:";
             // 
-            // comboBox1
+            // comboParcelas
             // 
-            this.comboBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboParcelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.comboParcelas.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.comboParcelas.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboParcelas.FormattingEnabled = true;
+            this.comboParcelas.Items.AddRange(new object[] {
             "1X",
             "2X",
             "3X",
@@ -326,10 +326,10 @@ namespace OrcamentoFacil.Telas
             "10X",
             "11X",
             "12X"});
-            this.comboBox1.Location = new System.Drawing.Point(585, 381);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(269, 24);
-            this.comboBox1.TabIndex = 33;
+            this.comboParcelas.Location = new System.Drawing.Point(585, 381);
+            this.comboParcelas.Name = "comboParcelas";
+            this.comboParcelas.Size = new System.Drawing.Size(269, 24);
+            this.comboParcelas.TabIndex = 33;
             // 
             // label9
             // 
@@ -342,18 +342,18 @@ namespace OrcamentoFacil.Telas
             this.label9.TabIndex = 32;
             this.label9.Text = "Parcelas:";
             // 
-            // textBox4
+            // txtValorParcelas
             // 
-            this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.ForeColor = System.Drawing.Color.White;
-            this.textBox4.Location = new System.Drawing.Point(585, 434);
-            this.textBox4.MaxLength = 10;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(269, 19);
-            this.textBox4.TabIndex = 35;
+            this.txtValorParcelas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtValorParcelas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorParcelas.Enabled = false;
+            this.txtValorParcelas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorParcelas.ForeColor = System.Drawing.Color.White;
+            this.txtValorParcelas.Location = new System.Drawing.Point(585, 434);
+            this.txtValorParcelas.MaxLength = 10;
+            this.txtValorParcelas.Name = "txtValorParcelas";
+            this.txtValorParcelas.Size = new System.Drawing.Size(269, 19);
+            this.txtValorParcelas.TabIndex = 35;
             // 
             // label10
             // 
@@ -388,15 +388,15 @@ namespace OrcamentoFacil.Telas
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(866, 559);
             this.Controls.Add(this.btnImprimir);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtValorParcelas);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboParcelas);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtValorLiquido);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtDesconto);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtValorBruto);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnRemoverProduto);
@@ -440,15 +440,15 @@ namespace OrcamentoFacil.Telas
         private System.Windows.Forms.Button btnAdicionarProduto;
         private System.Windows.Forms.Button btnRemoverProduto;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValorBruto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDesconto;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtValorLiquido;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboParcelas;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtValorParcelas;
         private System.Windows.Forms.Label label10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnImprimir;

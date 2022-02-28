@@ -33,11 +33,8 @@ namespace OrcamentoFacil.Telas
             this.pictureImagem = new System.Windows.Forms.PictureBox();
             this.btnAddFoto = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtEmpresa = new System.Windows.Forms.TextBox();
-            this.txtContato = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -47,10 +44,17 @@ namespace OrcamentoFacil.Telas
             this.txtTelefone = new System.Windows.Forms.MaskedTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtRua = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBairro = new System.Windows.Forms.TextBox();
+            this.txtContato = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCidade = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtUf = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -99,7 +103,6 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
-            this.tableLayoutPanel1.Controls.Add(this.txtComplemento, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtEmpresa, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.label4, 3, 0);
@@ -115,8 +118,13 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.Controls.Add(this.label9, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtBairro, 3, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtContato, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtNumero, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label10, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtComplemento, 0, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label12, 2, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtCidade, 2, 7);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.txtUf, 1, 7);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 140);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -130,28 +138,6 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 43F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(842, 220);
             this.tableLayoutPanel1.TabIndex = 2;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(387, 87);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(178, 27);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "Número:";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtNumero.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumero.ForeColor = System.Drawing.Color.White;
-            this.txtNumero.Location = new System.Drawing.Point(387, 121);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(178, 19);
-            this.txtNumero.TabIndex = 14;
             // 
             // label1
             // 
@@ -175,17 +161,7 @@ namespace OrcamentoFacil.Telas
             this.txtEmpresa.Name = "txtEmpresa";
             this.txtEmpresa.Size = new System.Drawing.Size(356, 19);
             this.txtEmpresa.TabIndex = 1;
-            // 
-            // txtContato
-            // 
-            this.txtContato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.txtContato.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtContato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContato.ForeColor = System.Drawing.Color.White;
-            this.txtContato.Location = new System.Drawing.Point(387, 33);
-            this.txtContato.Name = "txtContato";
-            this.txtContato.Size = new System.Drawing.Size(178, 19);
-            this.txtContato.TabIndex = 3;
+            this.txtEmpresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label4
             // 
@@ -254,6 +230,7 @@ namespace OrcamentoFacil.Telas
             this.txtCep.PromptChar = ' ';
             this.txtCep.Size = new System.Drawing.Size(164, 19);
             this.txtCep.TabIndex = 10;
+            this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtTelefone
             // 
@@ -268,6 +245,7 @@ namespace OrcamentoFacil.Telas
             this.txtTelefone.RejectInputOnFirstFailure = true;
             this.txtTelefone.Size = new System.Drawing.Size(223, 19);
             this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label7
             // 
@@ -290,6 +268,18 @@ namespace OrcamentoFacil.Telas
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(167, 19);
             this.txtRua.TabIndex = 12;
+            this.txtRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // label8
+            // 
+            this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(387, 87);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(178, 27);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "Número:";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label9
             // 
@@ -312,6 +302,31 @@ namespace OrcamentoFacil.Telas
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(223, 19);
             this.txtBairro.TabIndex = 16;
+            this.txtBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // txtContato
+            // 
+            this.txtContato.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtContato.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtContato.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContato.ForeColor = System.Drawing.Color.White;
+            this.txtContato.Location = new System.Drawing.Point(387, 33);
+            this.txtContato.Name = "txtContato";
+            this.txtContato.Size = new System.Drawing.Size(178, 19);
+            this.txtContato.TabIndex = 3;
+            this.txtContato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // txtNumero
+            // 
+            this.txtNumero.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtNumero.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtNumero.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.ForeColor = System.Drawing.Color.White;
+            this.txtNumero.Location = new System.Drawing.Point(387, 121);
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(178, 19);
+            this.txtNumero.TabIndex = 14;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label10
             // 
@@ -321,7 +336,7 @@ namespace OrcamentoFacil.Telas
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(178, 27);
             this.label10.TabIndex = 17;
-            this.label10.Text = "Complemento";
+            this.label10.Text = "Complemento:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtComplemento
@@ -334,6 +349,53 @@ namespace OrcamentoFacil.Telas
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(164, 19);
             this.txtComplemento.TabIndex = 18;
+            this.txtComplemento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(387, 147);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(178, 27);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Cidade:";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtCidade
+            // 
+            this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.ForeColor = System.Drawing.Color.White;
+            this.txtCidade.Location = new System.Drawing.Point(387, 180);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(164, 19);
+            this.txtCidade.TabIndex = 22;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(192, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(178, 27);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "UF:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // txtUf
+            // 
+            this.txtUf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtUf.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUf.ForeColor = System.Drawing.Color.White;
+            this.txtUf.Location = new System.Drawing.Point(192, 180);
+            this.txtUf.Name = "txtUf";
+            this.txtUf.Size = new System.Drawing.Size(164, 19);
+            this.txtUf.TabIndex = 20;
+            this.txtUf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // frmEmpresa
             // 
@@ -348,6 +410,7 @@ namespace OrcamentoFacil.Telas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEmpresa";
             this.Text = "frmEmpresa";
+            this.Load += new System.EventHandler(this.frmEmpresa_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureImagem)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -357,27 +420,31 @@ namespace OrcamentoFacil.Telas
 
         #endregion
 
-        private System.Windows.Forms.OpenFileDialog openFileDialog;
-        private System.Windows.Forms.PictureBox pictureImagem;
-        private System.Windows.Forms.Button btnAddFoto;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtEmpresa;
-        private System.Windows.Forms.TextBox txtContato;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox txtTelefone;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.MaskedTextBox txtCep;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtRua;
-        private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txtBairro;
-        private System.Windows.Forms.Label label10;
+        public System.Windows.Forms.OpenFileDialog openFileDialog;
+        public System.Windows.Forms.PictureBox pictureImagem;
+        public System.Windows.Forms.Button btnAddFoto;
+        public System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        public System.Windows.Forms.Label label1;
+        public System.Windows.Forms.TextBox txtEmpresa;
+        public System.Windows.Forms.TextBox txtContato;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
+        public System.Windows.Forms.Label label2;
+        public System.Windows.Forms.MaskedTextBox txtTelefone;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.MaskedTextBox txtCep;
+        public System.Windows.Forms.Label label8;
+        public System.Windows.Forms.TextBox txtNumero;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.TextBox txtRua;
+        public System.Windows.Forms.TextBox txtComplemento;
+        public System.Windows.Forms.Label label9;
+        public System.Windows.Forms.TextBox txtBairro;
+        public System.Windows.Forms.Label label10;
+        public System.Windows.Forms.TextBox txtUf;
+        public System.Windows.Forms.Label label11;
+        public System.Windows.Forms.Label label12;
+        public System.Windows.Forms.TextBox txtCidade;
     }
 }

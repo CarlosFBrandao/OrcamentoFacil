@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Funcoes;
 
 namespace OrcamentoFacil.Telas
 {
@@ -17,40 +18,19 @@ namespace OrcamentoFacil.Telas
             InitializeComponent();
         }
 
-        private void AceitarNumeros(KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '.' || e.KeyChar == ',')
-            {
-                //troca o . pela virgula
-                e.KeyChar = ',';
-
-                //Verifica se já existe alguma vírgula na string
-                if (txtValor.Text.Contains(","))
-                {
-                    e.Handled = true; // Caso exista, aborte 
-                }
-            }
-
-            //aceita apenas números, tecla backspace.
-            else if (!char.IsNumber(e.KeyChar) && !(e.KeyChar == (char)Keys.Back))
-            {
-                e.Handled = true;
-            }
-        }
-
         private void txtValorProd_KeyPress(object sender, KeyPressEventArgs e)
         {
-            AceitarNumeros(e);
+            Utils.AceitarSomenteNumerosDouble(e, txtValorProd);
         }
 
         private void txtQuantidade_KeyPress(object sender, KeyPressEventArgs e)
         {
-            AceitarNumeros(e);
+            Utils.AceitarSomenteNumerosDouble(e, txtQuantidade);
         }
 
-        private void textBox2_KeyPress(object sender, KeyPressEventArgs e)
+        private void txtDesconto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            AceitarNumeros(e);
+            Utils.AceitarSomenteNumerosDouble(e, txtDesconto);
         }
     }
 }

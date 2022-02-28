@@ -30,7 +30,7 @@ namespace OrcamentoFacil.Telas
         private void InitializeComponent()
         {
             this.txtDescricao = new System.Windows.Forms.TextBox();
-            this.txtSigla = new System.Windows.Forms.TextBox();
+            this.txtValorProduto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtValor = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -50,18 +50,18 @@ namespace OrcamentoFacil.Telas
             this.txtDescricao.Size = new System.Drawing.Size(839, 19);
             this.txtDescricao.TabIndex = 9;
             // 
-            // txtSigla
+            // txtValorProduto
             // 
-            this.txtSigla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.txtSigla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtSigla.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSigla.ForeColor = System.Drawing.Color.White;
-            this.txtSigla.Location = new System.Drawing.Point(15, 81);
-            this.txtSigla.MaxLength = 10;
-            this.txtSigla.Name = "txtSigla";
-            this.txtSigla.Size = new System.Drawing.Size(117, 19);
-            this.txtSigla.TabIndex = 8;
-            this.txtSigla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSigla_KeyPress);
+            this.txtValorProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtValorProduto.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtValorProduto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtValorProduto.ForeColor = System.Drawing.Color.White;
+            this.txtValorProduto.Location = new System.Drawing.Point(15, 81);
+            this.txtValorProduto.MaxLength = 10;
+            this.txtValorProduto.Name = "txtValorProduto";
+            this.txtValorProduto.Size = new System.Drawing.Size(117, 19);
+            this.txtValorProduto.TabIndex = 8;
+            this.txtValorProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorProduto_KeyPress);
             // 
             // label2
             // 
@@ -123,7 +123,7 @@ namespace OrcamentoFacil.Telas
             this.Controls.Add(this.cbUnidadeMedida);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescricao);
-            this.Controls.Add(this.txtSigla);
+            this.Controls.Add(this.txtValorProduto);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtValor);
             this.ForeColor = System.Drawing.Color.White;
@@ -139,7 +139,7 @@ namespace OrcamentoFacil.Telas
         #endregion
 
         private System.Windows.Forms.TextBox txtDescricao;
-        private System.Windows.Forms.TextBox txtSigla;
+        private System.Windows.Forms.TextBox txtValorProduto;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label txtValor;
         private System.Windows.Forms.Label label1;

@@ -1,7 +1,7 @@
 ﻿
-namespace Facil
+namespace OrcamentoFacil
 {
-    partial class frmTelaPrincipal
+    public partial class frmTelaPrincipal
     {
         /// <summary>
         /// Variável de designer necessária.
@@ -191,7 +191,7 @@ namespace Facil
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.47059F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.52941F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 465F));
+            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 468F));
             this.tableButtonsManipulação.Controls.Add(this.btnSalvar, 0, 0);
             this.tableButtonsManipulação.Controls.Add(this.btnCancelar, 1, 0);
             this.tableButtonsManipulação.Controls.Add(this.btnExcluir, 2, 0);
@@ -213,26 +213,31 @@ namespace Facil
             this.btnSalvar.Size = new System.Drawing.Size(29, 34);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Visible = false;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(49, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(47, 3);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(26, 34);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Visible = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnExcluir
             // 
             this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(92, 3);
+            this.btnExcluir.Location = new System.Drawing.Point(89, 3);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(44, 37);
             this.btnExcluir.TabIndex = 2;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Visible = false;
             // 
             // panelPrincipal
             // 
@@ -274,11 +279,11 @@ namespace Facil
         private System.Windows.Forms.Button BtnProdutos;
         private System.Windows.Forms.Button btnOrcamentos;
         private System.Windows.Forms.Button btnRelatorios;
-        private System.Windows.Forms.Button btnSalvar;
-        private System.Windows.Forms.Button btnCancelar;
+        public System.Windows.Forms.Button btnSalvar;
+        public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelPrincipal;
-        private System.Windows.Forms.Button btnExcluir;
+        public System.Windows.Forms.Button btnExcluir;
     }
 }
 

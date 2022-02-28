@@ -1,5 +1,6 @@
 ﻿using OrcamentoFacil.Telas;
 using System;
+using OrcamentoFacil.Funcoes;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace 
-    Facil
+    OrcamentoFacil
 {
     public partial class frmTelaPrincipal : Form
     {
@@ -53,7 +54,7 @@ namespace
 
         private void btnEmpresa_Click(object sender, EventArgs e)
         {
-            FormShow(new frmEmpresa());
+            FormShow(new frmEmpresa(this));
             ActiveButton(btnEmpresa);
         }
 
@@ -68,6 +69,7 @@ namespace
         {
             FormShow(new frmProdutos());
             ActiveButton(BtnProdutos);
+
         }
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
@@ -86,6 +88,31 @@ namespace
         {
             FormShow(new frmHome());
             ActiveButton(btnHome);
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if(Application.OpenForms.OfType<frmEmpresa>().Count() > 0)
+            {
+                FormShow(new frmEmpresa(this));
+            }
+            btnCancelar.Visible = false;
+            btnSalvar.Visible = false;
+        }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+            string retorno = "";
+            if (Application.OpenForms.OfType<frmEmpresa>().Count() > 0) { 
+                retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
+                if(retorno.Equals("Salvo Com Sucesso"))
+                {
+                    btnCancelar.Visible = false;
+                    btnSalvar.Visible = false;
+                    MessageBox.Show(retorno);
+                }
+
+            }
         }
     }
 }
