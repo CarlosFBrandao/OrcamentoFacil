@@ -37,6 +37,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -49,23 +54,70 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="Telas\TelaPrincipal.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Telas\TelaPrincipal.xaml.cs">
-      <DependentUpon>TelaPrincipal.xaml</DependentUpon>
-      <SubType>Code</SubType>
+    <Compile Include="Telas\frmClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmEmpresa.Designer.cs">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmHome.Designer.cs">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmOrcamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmOrcamentos.Designer.cs">
+      <DependentUpon>frmOrcamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmProdutos.Designer.cs">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmRelatorios.Designer.cs">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmTabProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTabProduto.Designer.cs">
+      <DependentUpon>frmTabProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmTabUnidadeMedida.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTabUnidadeMedida.Designer.cs">
+      <DependentUpon>frmTabUnidadeMedida.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\frmTelaPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\frmTelaPrincipal.Designer.cs">
+      <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -86,6 +138,33 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmHome.resx">
+      <DependentUpon>frmHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmOrcamentos.resx">
+      <DependentUpon>frmOrcamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmProdutos.resx">
+      <DependentUpon>frmProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmRelatorios.resx">
+      <DependentUpon>frmRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmTabProduto.resx">
+      <DependentUpon>frmTabProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmTabUnidadeMedida.resx">
+      <DependentUpon>frmTabUnidadeMedida.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\frmTelaPrincipal.resx">
+      <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,6 +172,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{b6eb460c-2d17-43f3-9a4e-119b889371eb}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Funcoes\Funcoes.csproj">
+      <Project>{0993c5b0-8704-4926-8cbc-1d8d02c464af}</Project>
+      <Name>Funcoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Modelo\Modelo.csproj">
+      <Project>{dbe1af49-2338-4b2e-8b87-0203b3bb74a5}</Project>
+      <Name>Modelo</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

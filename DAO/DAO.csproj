@@ -60,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClienteDAO.cs" />
     <Compile Include="EmpresaDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="BD\OrcamentoBD.db" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

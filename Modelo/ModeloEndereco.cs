@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    public class Endereco
+    public class ModeloEndereco
     {
         public int IdEndereco { get; set; }
         public string Cep { get; set; }

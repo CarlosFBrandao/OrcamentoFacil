@@ -14,7 +14,7 @@ namespace Funcoes
 
         public static SQLiteConnection ConexaoBD()
         {
-            conexao = new SQLiteConnection("Data Source=D:\\Meus Projetos\\OrcamentoFacil\\OrcamentoFacil\\BD\\OrcamentoBD.db");
+            conexao = new SQLiteConnection("Data Source=D:\\Meus Projetos\\OrcamentoFacil\\DAO\\BD\\OrcamentoBD.db");
             conexao.Open();
             return conexao;
         }

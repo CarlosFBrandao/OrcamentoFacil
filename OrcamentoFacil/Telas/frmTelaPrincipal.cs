@@ -1,6 +1,5 @@
 ﻿using OrcamentoFacil.Telas;
 using System;
-using OrcamentoFacil.Funcoes;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -104,7 +103,7 @@ namespace
         {
             string retorno = "";
             if (Application.OpenForms.OfType<frmEmpresa>().Count() > 0) { 
-                retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
+                //retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
                 if(retorno.Equals("Salvo Com Sucesso"))
                 {
                     btnCancelar.Visible = false;

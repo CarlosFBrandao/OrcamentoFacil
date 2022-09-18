@@ -6,13 +6,11 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class ModeloCliente
+    public class ModeloCliente : ModeloEndereco
     {
         public int IdCliente { get; set; }
         public string NomeCliente { get; set; }
         public string Contato { get; set; }
         public string Telefone { get; set; }
-        public Endereco Endereco { get; set; }
-
     }
 }
