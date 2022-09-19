@@ -37,6 +37,35 @@ namespace Funcoes
                 throw ex;
             }
         }
+        public static int InsereDados(StringBuilder sb, string coluna, string tabela)
+        {
+            SQLiteDataAdapter da = null;
+            DataTable dt = new DataTable();
+            try
+            {
+                using (var cmd = Funcoes.ConexaoBd.ConexaoBD().CreateCommand())
+                {
+                    da = new SQLiteDataAdapter(sb.ToString(), ConexaoBD());
+                    da.Fill(dt);
+                }
+
+                sb.Clear();
+                sb.Append($"select MAX({coluna}) ID from {tabela}");
+
+                using (var cmd = Funcoes.ConexaoBd.ConexaoBD().CreateCommand())
+                {
+                    da = new SQLiteDataAdapter(sb.ToString(), ConexaoBD());
+                    da.Fill(dt);
+                }
+
+                return Convert.ToInt32(dt.Rows[0]["ID"]);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public static DataTable RetornaId(StringBuilder sb)
         {
             SQLiteDataAdapter da = null;

@@ -40,8 +40,9 @@ namespace OrcamentoFacil
             this.tableButtonsManipulação = new System.Windows.Forms.TableLayoutPanel();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnExcluir = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
+            this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.tableButtonsManipulação.SuspendLayout();
             this.SuspendLayout();
@@ -191,10 +192,11 @@ namespace OrcamentoFacil
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.47059F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.52941F));
             this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 468F));
-            this.tableButtonsManipulação.Controls.Add(this.btnSalvar, 0, 0);
+            this.tableButtonsManipulação.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 469F));
+            this.tableButtonsManipulação.Controls.Add(this.btnNovo, 0, 0);
+            this.tableButtonsManipulação.Controls.Add(this.btnExcluir, 0, 0);
             this.tableButtonsManipulação.Controls.Add(this.btnCancelar, 1, 0);
-            this.tableButtonsManipulação.Controls.Add(this.btnExcluir, 2, 0);
+            this.tableButtonsManipulação.Controls.Add(this.btnSalvar, 2, 0);
             this.tableButtonsManipulação.Location = new System.Drawing.Point(195, 0);
             this.tableButtonsManipulação.Name = "tableButtonsManipulação";
             this.tableButtonsManipulação.RowCount = 1;
@@ -205,39 +207,28 @@ namespace OrcamentoFacil
             // 
             // btnSalvar
             // 
+            this.btnSalvar.Enabled = false;
             this.btnSalvar.FlatAppearance.BorderSize = 0;
             this.btnSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
-            this.btnSalvar.Location = new System.Drawing.Point(3, 3);
+            this.btnSalvar.Location = new System.Drawing.Point(138, 3);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(29, 34);
+            this.btnSalvar.Size = new System.Drawing.Size(34, 34);
             this.btnSalvar.TabIndex = 0;
             this.btnSalvar.UseVisualStyleBackColor = true;
-            this.btnSalvar.Visible = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnCancelar
             // 
+            this.btnCancelar.Enabled = false;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(47, 3);
+            this.btnCancelar.Location = new System.Drawing.Point(88, 3);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(26, 34);
+            this.btnCancelar.Size = new System.Drawing.Size(38, 38);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Visible = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(89, 3);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(44, 37);
-            this.btnExcluir.TabIndex = 2;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Visible = false;
             // 
             // panelPrincipal
             // 
@@ -245,6 +236,31 @@ namespace OrcamentoFacil
             this.panelPrincipal.Name = "panelPrincipal";
             this.panelPrincipal.Size = new System.Drawing.Size(866, 559);
             this.panelPrincipal.TabIndex = 3;
+            // 
+            // btnExcluir
+            // 
+            this.btnExcluir.Enabled = false;
+            this.btnExcluir.FlatAppearance.BorderSize = 0;
+            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
+            this.btnExcluir.Location = new System.Drawing.Point(3, 3);
+            this.btnExcluir.Name = "btnExcluir";
+            this.btnExcluir.Size = new System.Drawing.Size(38, 38);
+            this.btnExcluir.TabIndex = 3;
+            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.Enabled = false;
+            this.btnNovo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnNovo.Image = ((System.Drawing.Image)(resources.GetObject("btnNovo.Image")));
+            this.btnNovo.Location = new System.Drawing.Point(47, 3);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Size = new System.Drawing.Size(35, 38);
+            this.btnNovo.TabIndex = 4;
+            this.btnNovo.UseVisualStyleBackColor = true;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // frmTelaPrincipal
             // 
@@ -284,6 +300,7 @@ namespace OrcamentoFacil
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelPrincipal;
         public System.Windows.Forms.Button btnExcluir;
+        public System.Windows.Forms.Button btnNovo;
     }
 }
 

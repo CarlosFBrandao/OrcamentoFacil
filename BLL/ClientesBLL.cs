@@ -20,5 +20,30 @@ namespace BLL
                 throw;
             }
         }
+
+        public static void ExcluirCliente(int idCliente)
+        {
+            try
+            {
+                DAO.ClienteDAO.ExcluirCliente(idCliente);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public static void SalvarCLiente(ModeloCliente cliente)
+        {
+            try
+            {
+                DAO.ClienteDAO.SalvarCliente(cliente);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using OrcamentoFacil.Telas;
 using System;
+using OrcamentoFacil.Funcoes;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace 
+namespace
     OrcamentoFacil
 {
     public partial class frmTelaPrincipal : Form
@@ -32,7 +33,7 @@ namespace
 
         private void ActiveFormClose()
         {
-            if(frmAtivo != null)
+            if (frmAtivo != null)
             {
                 frmAtivo.Close();
             }
@@ -59,7 +60,9 @@ namespace
 
         private void btnClientes_Click(object sender, EventArgs e)
         {
-            FormShow(new frmClientes());
+            FormShow(new frmClientes(this));
+            btnExcluir.Enabled = true;
+            btnNovo.Enabled = true;
             ActiveButton(btnClientes);
 
         }
@@ -67,12 +70,16 @@ namespace
         private void BtnProdutos_Click(object sender, EventArgs e)
         {
             FormShow(new frmProdutos());
+            btnNovo.Enabled = true;
+            btnExcluir.Enabled = true;
             ActiveButton(BtnProdutos);
 
         }
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
         {
+            btnExcluir.Enabled = true;
+            btnNovo.Enabled = true;
             FormShow(new frmOrcamentos());
             ActiveButton(btnOrcamentos);
         }
@@ -91,26 +98,58 @@ namespace
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if(Application.OpenForms.OfType<frmEmpresa>().Count() > 0)
+            if (Application.OpenForms.OfType<frmEmpresa>().Count() > 0)
             {
                 FormShow(new frmEmpresa(this));
             }
-            btnCancelar.Visible = false;
-            btnSalvar.Visible = false;
+            btnCancelar.Enabled = false;
+            btnSalvar.Enabled = false;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             string retorno = "";
-            if (Application.OpenForms.OfType<frmEmpresa>().Count() > 0) { 
-                //retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
-                if(retorno.Equals("Salvo Com Sucesso"))
+            if (Application.OpenForms.OfType<frmEmpresa>().Count() > 0)
+            {
+                retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
+                if (retorno.Equals("Salvo Com Sucesso"))
                 {
-                    btnCancelar.Visible = false;
-                    btnSalvar.Visible = false;
+                    btnCancelar.Enabled = false;
+                    btnSalvar.Enabled = false;
                     MessageBox.Show(retorno);
                 }
+            }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
+            {
+                ((frmClientes)frmAtivo).SalvarCliente();
+            }
 
+        }
+
+        public void AtivaDesativaBotoes(Form tela, bool comando)
+        {
+            btnSalvar.Enabled = comando;
+            btnCancelar.Enabled = comando;
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
+            {
+                frmClientes.ExcluirCliente();
+            }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            btnNovo.Enabled = false;
+            btnExcluir.Enabled = false;
+            btnCancelar.Enabled = true;
+            btnSalvar.Enabled = true;
+
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
+            {
+                ((frmClientes)frmAtivo).Incluir();
             }
         }
     }

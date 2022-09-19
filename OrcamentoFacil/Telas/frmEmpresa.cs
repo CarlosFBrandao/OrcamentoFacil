@@ -24,8 +24,8 @@ namespace OrcamentoFacil.Telas
         }
         public void ExibeOcultaBotoes()
         {
-            frmTelaPrincipal.btnSalvar.Visible = true;
-            frmTelaPrincipal.btnCancelar.Visible = true;
+            frmTelaPrincipal.btnSalvar.Enabled = true;
+            frmTelaPrincipal.btnCancelar.Enabled = true;
         }
 
         public void PopulaCampos()
@@ -56,35 +56,43 @@ namespace OrcamentoFacil.Telas
 
         private void btnAddFoto_Click(object sender, EventArgs e)
         {
-            string origemCompleto = "";
-            string foto = "";
-            string pastaDestino = "foto\\";
-            destinoCompleto = "";
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                origemCompleto = openFileDialog.FileName;
-                foto = openFileDialog.SafeFileName;
-                destinoCompleto = pastaDestino + foto;
-            }
+                string origemCompleto = "";
+                string foto = "";
+                string pastaDestino = "D:\\Meus Projetos\\OrcamentoFacil\\OrcamentoFacil\\foto\\";
+                destinoCompleto = "";
 
-            if (File.Exists(destinoCompleto))
-            {
-                if (MessageBox.Show("Arquivo já existe, deseja substituir?", "Substituir?", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    return;
+                    origemCompleto = openFileDialog.FileName;
+                    foto = openFileDialog.SafeFileName;
+                    destinoCompleto = pastaDestino + foto;
                 }
 
+                if (File.Exists(destinoCompleto))
+                {
+                    if (MessageBox.Show("Arquivo já existe, deseja substituir?", "Substituir?", MessageBoxButtons.YesNo) == DialogResult.No)
+                    {
+                        return;
+                    }
+
+                }
+                File.Copy(origemCompleto, destinoCompleto, true);
+                if (File.Exists(destinoCompleto))
+                {
+                    pictureImagem.ImageLocation = destinoCompleto;
+                }
+                else
+                {
+                    MessageBox.Show("Arquivo não copiado!");
+                }
             }
-            File.Copy(origemCompleto, destinoCompleto, true);
-            if (File.Exists(destinoCompleto))
+            catch (Exception)
             {
-                pictureImagem.ImageLocation = destinoCompleto;
+                MessageBox.Show("Falha ao carregar imagem");
             }
-            else
-            {
-                MessageBox.Show("Arquivo não copiado!");
-            }
+            
         }
 
         private void frmEmpresa_Load(object sender, EventArgs e)

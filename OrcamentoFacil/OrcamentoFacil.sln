@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Modelo", "..\Modelo\Modelo.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BLL", "..\BLL\BLL.csproj", "{B6EB460C-2D17-43F3-9A4E-119B889371EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrcamentoFacil", "E:\OrcamentoFacil\OrcamentoFacil\OrcamentoFacil.csproj", "{9D364428-4E84-4F2D-8710-07CC681E4213}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrcamentoFacil", "OrcamentoFacil.csproj", "{9D364428-4E84-4F2D-8710-07CC681E4213}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

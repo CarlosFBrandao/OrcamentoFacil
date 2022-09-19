@@ -29,7 +29,13 @@ namespace OrcamentoFacil.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle46 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle47 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle48 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle49 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle50 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtCidade = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
@@ -48,9 +54,13 @@ namespace OrcamentoFacil.Telas
             this.txtContato = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dtGridClientes = new System.Windows.Forms.DataGridView();
+            this.IdCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NomeCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,6 +77,7 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 77F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 39F));
+            this.tableLayoutPanel1.Controls.Add(this.txtCidade, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.txtComplemento, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtNome, 0, 2);
@@ -85,6 +96,7 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.Controls.Add(this.txtContato, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.label10, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.txtNumero, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.label11, 1, 6);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(12, 12);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 8;
@@ -99,16 +111,29 @@ namespace OrcamentoFacil.Telas
             this.tableLayoutPanel1.Size = new System.Drawing.Size(842, 220);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
+            // txtCidade
+            // 
+            this.txtCidade.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.txtCidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCidade.ForeColor = System.Drawing.Color.White;
+            this.txtCidade.Location = new System.Drawing.Point(3, 180);
+            this.txtCidade.Name = "txtCidade";
+            this.txtCidade.Size = new System.Drawing.Size(164, 19);
+            this.txtCidade.TabIndex = 20;
+            this.txtCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
+            // 
             // txtComplemento
             // 
             this.txtComplemento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.txtComplemento.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtComplemento.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplemento.ForeColor = System.Drawing.Color.White;
-            this.txtComplemento.Location = new System.Drawing.Point(3, 180);
+            this.txtComplemento.Location = new System.Drawing.Point(192, 180);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(164, 19);
             this.txtComplemento.TabIndex = 18;
+            this.txtComplemento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label1
             // 
@@ -132,6 +157,7 @@ namespace OrcamentoFacil.Telas
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(356, 19);
             this.txtNome.TabIndex = 1;
+            this.txtNome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label4
             // 
@@ -141,7 +167,7 @@ namespace OrcamentoFacil.Telas
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 31);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Telefone";
+            this.label4.Text = "Telefone:";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -163,7 +189,7 @@ namespace OrcamentoFacil.Telas
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(183, 31);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Nome";
+            this.label2.Text = "Nome:";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -200,6 +226,7 @@ namespace OrcamentoFacil.Telas
             this.txtCep.PromptChar = ' ';
             this.txtCep.Size = new System.Drawing.Size(164, 19);
             this.txtCep.TabIndex = 10;
+            this.txtCep.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtTelefone
             // 
@@ -214,6 +241,7 @@ namespace OrcamentoFacil.Telas
             this.txtTelefone.RejectInputOnFirstFailure = true;
             this.txtTelefone.Size = new System.Drawing.Size(223, 19);
             this.txtTelefone.TabIndex = 7;
+            this.txtTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label7
             // 
@@ -236,6 +264,7 @@ namespace OrcamentoFacil.Telas
             this.txtRua.Name = "txtRua";
             this.txtRua.Size = new System.Drawing.Size(167, 19);
             this.txtRua.TabIndex = 12;
+            this.txtRua.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label8
             // 
@@ -269,6 +298,7 @@ namespace OrcamentoFacil.Telas
             this.txtBairro.Name = "txtBairro";
             this.txtBairro.Size = new System.Drawing.Size(223, 19);
             this.txtBairro.TabIndex = 16;
+            this.txtBairro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtContato
             // 
@@ -280,6 +310,7 @@ namespace OrcamentoFacil.Telas
             this.txtContato.Name = "txtContato";
             this.txtContato.Size = new System.Drawing.Size(178, 19);
             this.txtContato.TabIndex = 3;
+            this.txtContato.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label10
             // 
@@ -289,7 +320,7 @@ namespace OrcamentoFacil.Telas
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(178, 27);
             this.label10.TabIndex = 17;
-            this.label10.Text = "Complemento";
+            this.label10.Text = "Cidade:";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtNumero
@@ -302,15 +333,105 @@ namespace OrcamentoFacil.Telas
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(178, 19);
             this.txtNumero.TabIndex = 14;
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
-            // dataGridView1
+            // label11
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 238);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(839, 309);
-            this.dataGridView1.TabIndex = 4;
+            this.label11.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Location = new System.Drawing.Point(192, 147);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(178, 27);
+            this.label11.TabIndex = 19;
+            this.label11.Text = "Complemento:";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // dtGridClientes
+            // 
+            dataGridViewCellStyle46.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle46.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle46.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle46.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle46.SelectionForeColor = System.Drawing.Color.Olive;
+            this.dtGridClientes.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle46;
+            this.dtGridClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dtGridClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dtGridClientes.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.dtGridClientes.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtGridClientes.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle47.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle47.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle47.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle47.ForeColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle47.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle47.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle47.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle47;
+            this.dtGridClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridClientes.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdCliente,
+            this.NomeCliente,
+            this.Telefone});
+            dataGridViewCellStyle48.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle48.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle48.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle48.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle48.SelectionBackColor = System.Drawing.SystemColors.Desktop;
+            dataGridViewCellStyle48.SelectionForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            dataGridViewCellStyle48.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridClientes.DefaultCellStyle = dataGridViewCellStyle48;
+            this.dtGridClientes.Location = new System.Drawing.Point(15, 238);
+            this.dtGridClientes.Name = "dtGridClientes";
+            this.dtGridClientes.ReadOnly = true;
+            dataGridViewCellStyle49.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle49.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle49.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle49.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle49.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle49.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle49.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle49;
+            dataGridViewCellStyle50.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle50.Font = new System.Drawing.Font("Arial", 12F);
+            dataGridViewCellStyle50.ForeColor = System.Drawing.Color.White;
+            this.dtGridClientes.RowsDefaultCellStyle = dataGridViewCellStyle50;
+            this.dtGridClientes.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            this.dtGridClientes.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 12F);
+            this.dtGridClientes.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.Gray;
+            this.dtGridClientes.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dtGridClientes.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridClientes.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridClientes.Size = new System.Drawing.Size(839, 309);
+            this.dtGridClientes.TabIndex = 4;
+            // 
+            // IdCliente
+            // 
+            this.IdCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdCliente.DataPropertyName = "IdCliente";
+            this.IdCliente.FillWeight = 10F;
+            this.IdCliente.HeaderText = "Código";
+            this.IdCliente.MinimumWidth = 10;
+            this.IdCliente.Name = "IdCliente";
+            this.IdCliente.ReadOnly = true;
+            // 
+            // NomeCliente
+            // 
+            this.NomeCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.NomeCliente.DataPropertyName = "NomeCliente";
+            this.NomeCliente.FillWeight = 300F;
+            this.NomeCliente.HeaderText = "Nome";
+            this.NomeCliente.Name = "NomeCliente";
+            this.NomeCliente.ReadOnly = true;
+            this.NomeCliente.Width = 500;
+            // 
+            // Telefone
+            // 
+            this.Telefone.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Telefone.DataPropertyName = "Telefone";
+            this.Telefone.HeaderText = "Telefone";
+            this.Telefone.Name = "Telefone";
+            this.Telefone.ReadOnly = true;
+            this.Telefone.Width = 200;
             // 
             // frmClientes
             // 
@@ -318,14 +439,15 @@ namespace OrcamentoFacil.Telas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(866, 559);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dtGridClientes);
             this.Controls.Add(this.tableLayoutPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmClientes";
             this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridClientes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -351,6 +473,11 @@ namespace OrcamentoFacil.Telas
         private System.Windows.Forms.TextBox txtContato;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtNumero;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtGridClientes;
+        private System.Windows.Forms.TextBox txtCidade;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefone;
     }
 }
