@@ -9,14 +9,18 @@ namespace OrcamentoFacil
     {
         ModeloUnidadeMedida unidadeMedidaSelecionado = new ModeloUnidadeMedida();
         List<ModeloUnidadeMedida> unidades = new List<ModeloUnidadeMedida>();
-        public frmTabUnidadeMedida()
+        public frmTelaPrincipal Owner;
+
+        public frmTabUnidadeMedida(frmTelaPrincipal frm)
         {
+            Owner = frm;
             InitializeComponent();
         }
 
         public void Salvar()
         {
             ModeloUnidadeMedida und = new ModeloUnidadeMedida();
+            und.IdUnidadeMedida = unidadeMedidaSelecionado.IdUnidadeMedida;
             und.Descricao = txtDescricao.Text;
             und.Sigla = txtSigla.Text;
             int idInserido = BLL.UnidadeMedidaBLL.Salvar(und);
@@ -90,6 +94,11 @@ namespace OrcamentoFacil
         {
             unidadeMedidaSelecionado.IdUnidadeMedida = 0;
             ZerarCampos();
+        }
+
+        private void txt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Owner.EmEdicao();
         }
     }
 }

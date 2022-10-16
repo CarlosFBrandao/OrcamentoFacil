@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace OrcamentoFacil.Telas
@@ -36,20 +30,16 @@ namespace OrcamentoFacil.Telas
                 frmAtivo.Close();
             }
         }
-        private void produtoToolStripMenuItem_Click(object sender, EventArgs e)
+        public void produtoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShow(new frmTabProduto());
+            FormShow(new frmTabProduto(Owner));
+            Owner.SetFrmAtivo(frmAtivo);
         }
 
         private void unidadeDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormShow(new frmTabUnidadeMedida());
+            FormShow(new frmTabUnidadeMedida(Owner));
             Owner.SetFrmAtivo(frmAtivo);
-        }
-
-        private void frmProdutos_Load(object sender, EventArgs e)
-        {
-            FormShow(new frmTabProduto());
         }
     }
 }

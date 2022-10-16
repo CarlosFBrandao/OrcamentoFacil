@@ -87,7 +87,6 @@ namespace OrcamentoFacil.Telas
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmProdutos";
             this.Text = "frmProdutos";
-            this.Load += new System.EventHandler(this.frmProdutos_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

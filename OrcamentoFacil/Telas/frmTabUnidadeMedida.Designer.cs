@@ -78,6 +78,7 @@ namespace OrcamentoFacil
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(94, 19);
             this.txtSigla.TabIndex = 4;
+            this.txtSigla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // txtDescricao
             // 
@@ -89,6 +90,7 @@ namespace OrcamentoFacil
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.Size = new System.Drawing.Size(695, 19);
             this.txtDescricao.TabIndex = 5;
+            this.txtDescricao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // dataGridView1
             // 

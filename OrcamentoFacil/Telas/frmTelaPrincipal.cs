@@ -79,6 +79,7 @@ namespace
             btnExcluir.Enabled = true;
             ActiveButton(BtnProdutos);
             ((frmProdutos)frmAtivo).Owner = this;
+            ((frmProdutos)frmAtivo).produtoToolStripMenuItem_Click(null, null);
         }
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
@@ -115,6 +116,10 @@ namespace
             {
                 ((frmTabUnidadeMedida)frmAtivo).BuscarUnidades();
             }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabProduto")
+            {
+                ((frmTabProduto)frmAtivo).BuscarProdutos();
+            }
             btnCancelar.Enabled = false;
             btnSalvar.Enabled = false;
             btnNovo.Enabled = true;
@@ -141,9 +146,14 @@ namespace
             {
                 ((frmTabUnidadeMedida)frmAtivo).Salvar();
             }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabProduto")
+            {
+                ((frmTabProduto)frmAtivo).Salvar();
+            }
             btnCancelar.Enabled = false;
             btnSalvar.Enabled = false;
             btnExcluir.Enabled = true;
+            btnNovo.Enabled = true;
         }
 
         public void AtivaDesativaBotoes(Form tela, bool comando)
@@ -161,6 +171,10 @@ namespace
             if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabUnidadeMedida")
             {
                 ((frmTabUnidadeMedida)frmAtivo).ExcluirUnidadeMedida();
+            }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabProduto")
+            {
+                ((frmTabProduto)frmAtivo).Excluir();
             }
 
         }
@@ -180,6 +194,18 @@ namespace
             {
                 ((frmTabUnidadeMedida)frmAtivo).Incluir();
             }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabProduto")
+            {
+                ((frmTabProduto)frmAtivo).Incluir();
+            }
+        }
+
+        public void EmEdicao()
+        {
+            btnSalvar.Enabled = true;
+            btnCancelar.Enabled = true;
+            btnNovo.Enabled = false;
+            btnExcluir.Enabled = false;
         }
     }
 }

@@ -131,6 +131,8 @@
       <DependentUpon>frmTelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Modelo.ModeloProduto.datasource" />
+    <None Include="Properties\DataSources\Modelo.ModeloUnidadeMedida.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
