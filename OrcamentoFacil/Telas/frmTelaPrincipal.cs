@@ -31,6 +31,11 @@ namespace
             frm.Show();
         }
 
+        public void SetFrmAtivo(Form frm)
+        {
+            frmAtivo = frm;
+        }
+
         private void ActiveFormClose()
         {
             if (frmAtivo != null)
@@ -73,7 +78,7 @@ namespace
             btnNovo.Enabled = true;
             btnExcluir.Enabled = true;
             ActiveButton(BtnProdutos);
-
+            ((frmProdutos)frmAtivo).Owner = this;
         }
 
         private void btnOrcamentos_Click(object sender, EventArgs e)
@@ -102,8 +107,18 @@ namespace
             {
                 FormShow(new frmEmpresa(this));
             }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
+            {
+                ((frmClientes)frmAtivo).BuscarClientes();
+            }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabUnidadeMedida")
+            {
+                ((frmTabUnidadeMedida)frmAtivo).BuscarUnidades();
+            }
             btnCancelar.Enabled = false;
             btnSalvar.Enabled = false;
+            btnNovo.Enabled = true;
+            btnExcluir.Enabled = true;
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -114,8 +129,6 @@ namespace
                 retorno = SalvarEmpresa.SalvarCadastroEmpresa((frmEmpresa)frmAtivo);
                 if (retorno.Equals("Salvo Com Sucesso"))
                 {
-                    btnCancelar.Enabled = false;
-                    btnSalvar.Enabled = false;
                     MessageBox.Show(retorno);
                 }
             }
@@ -124,6 +137,13 @@ namespace
                 ((frmClientes)frmAtivo).SalvarCliente();
             }
 
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabUnidadeMedida")
+            {
+                ((frmTabUnidadeMedida)frmAtivo).Salvar();
+            }
+            btnCancelar.Enabled = false;
+            btnSalvar.Enabled = false;
+            btnExcluir.Enabled = true;
         }
 
         public void AtivaDesativaBotoes(Form tela, bool comando)
@@ -136,8 +156,13 @@ namespace
         {
             if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
             {
-                frmClientes.ExcluirCliente();
+                ((frmClientes)frmAtivo).ExcluirCliente();
             }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabUnidadeMedida")
+            {
+                ((frmTabUnidadeMedida)frmAtivo).ExcluirUnidadeMedida();
+            }
+
         }
 
         private void btnNovo_Click(object sender, EventArgs e)
@@ -150,6 +175,10 @@ namespace
             if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmClientes")
             {
                 ((frmClientes)frmAtivo).Incluir();
+            }
+            if (((ControlAccessibleObject)frmAtivo.AccessibilityObject).Name == "frmTabUnidadeMedida")
+            {
+                ((frmTabUnidadeMedida)frmAtivo).Incluir();
             }
         }
     }

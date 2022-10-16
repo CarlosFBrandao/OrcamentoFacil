@@ -13,6 +13,8 @@ namespace OrcamentoFacil.Telas
     public partial class frmProdutos : Form
     {
         private Form frmAtivo;
+        public frmTelaPrincipal Owner;
+
         public frmProdutos()
         {
             InitializeComponent();
@@ -42,6 +44,7 @@ namespace OrcamentoFacil.Telas
         private void unidadeDeMedidaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormShow(new frmTabUnidadeMedida());
+            Owner.SetFrmAtivo(frmAtivo);
         }
 
         private void frmProdutos_Load(object sender, EventArgs e)

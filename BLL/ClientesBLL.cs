@@ -21,11 +21,11 @@ namespace BLL
             }
         }
 
-        public static void ExcluirCliente(int idCliente)
+        public static void ExcluirCliente(int idCliente, int idEndereco)
         {
             try
             {
-                DAO.ClienteDAO.ExcluirCliente(idCliente);
+                DAO.ClienteDAO.ExcluirCliente(idCliente, idEndereco);
             }
             catch (Exception)
             {

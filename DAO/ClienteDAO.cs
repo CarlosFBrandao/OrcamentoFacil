@@ -54,12 +54,13 @@ namespace DAO
             }
         }
 
-        public static void ExcluirCliente(int idCliente)
+        public static void ExcluirCliente(int idCliente, int idEndereco)
         {
             try
             {
                 sb.Clear();
-                sb.Append($"delete from clientes where idClientes = {idCliente}");
+                sb.Append($@"delete from clientes where idClientes = {idCliente};
+                             delete from endereco where idendereco = {idEndereco} ");
                 var resultado = ConexaoBd.ExecutaConsulta(sb);
             }
             catch (Exception)

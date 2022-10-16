@@ -28,12 +28,15 @@ namespace OrcamentoFacil.Telas
             BuscarClientes();
         }
 
-        private void BuscarClientes()
+        public void BuscarClientes()
         {
             cliente = BLL.ClientesBLL.BuscarClientes();
             dtGridClientes.DataSource = cliente;
-            clienteSelecionado = cliente[0];
-            PopulaCampos(clienteSelecionado);
+            if (cliente.Count > 0)
+            {
+                clienteSelecionado = cliente[0];
+                PopulaCampos(clienteSelecionado);
+            }
         }
 
         private void PopulaCampos(ModeloCliente cliente)
@@ -54,24 +57,37 @@ namespace OrcamentoFacil.Telas
             frmTelaPrincipal.AtivaDesativaBotoes(this, true);
         }
 
-        public static void ExcluirCliente()
+        public void ExcluirCliente()
         {
-            BLL.ClientesBLL.ExcluirCliente(0);
+            if(clienteSelecionado.IdCliente != 0)
+            {
+                BLL.ClientesBLL.ExcluirCliente(clienteSelecionado.IdCliente, clienteSelecionado.IdEndereco);
+                BuscarClientes();
+            }
         }
 
         public void SalvarCliente()
         {
-            clienteSelecionado.NomeCliente = txtNome.Text;
-            clienteSelecionado.Contato = txtContato.Text;
-            clienteSelecionado.Telefone = txtTelefone.Text;
-            clienteSelecionado.Cep = txtCep.Text;
-            clienteSelecionado.Logradouro = txtRua.Text;
-            clienteSelecionado.Numero = txtNumero.Text;
-            clienteSelecionado.Bairro = txtBairro.Text;
-            clienteSelecionado.Cidade = txtCidade.Text;
-            clienteSelecionado.Complemento = txtComplemento.Text;
+            try
+            {
+                clienteSelecionado.NomeCliente = txtNome.Text;
+                clienteSelecionado.Contato = txtContato.Text;
+                clienteSelecionado.Telefone = txtTelefone.Text;
+                clienteSelecionado.Cep = txtCep.Text;
+                clienteSelecionado.Logradouro = txtRua.Text;
+                clienteSelecionado.Numero = txtNumero.Text;
+                clienteSelecionado.Bairro = txtBairro.Text;
+                clienteSelecionado.Cidade = txtCidade.Text;
+                clienteSelecionado.Complemento = txtComplemento.Text;
 
-            BLL.ClientesBLL.SalvarCLiente(clienteSelecionado);
+                BLL.ClientesBLL.SalvarCLiente(clienteSelecionado);
+                BuscarClientes();
+                MessageBox.Show("Salvo com sucesso", "Salvar Cliente");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Falha ao tentar salvar registro", "Salvar Cliente");
+            }
         }
 
         public void Incluir()
@@ -92,6 +108,11 @@ namespace OrcamentoFacil.Telas
             txtBairro.Text = string.Empty;
             txtCidade.Text = string.Empty;
             txtComplemento.Text = string.Empty;
+        }
+        private void dtGridClientes_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            clienteSelecionado = cliente[e.RowIndex];
+            PopulaCampos(clienteSelecionado);
         }
     }
 }
