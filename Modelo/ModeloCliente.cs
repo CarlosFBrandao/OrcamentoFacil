@@ -12,5 +12,7 @@ namespace Modelo
         public string NomeCliente { get; set; }
         public string Contato { get; set; }
         public string Telefone { get; set; }
+        public string NomeConcat { get; set; }
+
     }
 }

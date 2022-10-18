@@ -13,19 +13,21 @@ namespace Modelo
         public double Valor { get; set; }
         public string Sigla { get; set; }
         public ModeloUnidadeMedida UnidadeMedida { get; set; }
+        public string NomeConcat { get; set; }
 
         public ModeloProduto()
         {
             UnidadeMedida = new ModeloUnidadeMedida();
         }
 
-        public ModeloProduto(int idProduto, string descricao, double valor, string sigla, ModeloUnidadeMedida unidadeMedida)
+        public ModeloProduto(int idProduto, string descricao, double valor, string sigla, ModeloUnidadeMedida unidadeMedida, string nomeConcat)
         {
             IdProduto = idProduto;
             Descricao = descricao;
             Valor = valor;
             UnidadeMedida = unidadeMedida;
             Sigla = sigla;
+            NomeConcat = nomeConcat;
         }
     }
 }

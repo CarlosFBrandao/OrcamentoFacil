@@ -16,7 +16,7 @@ namespace OrcamentoFacil.Telas
         frmTelaPrincipal frmTelaPrincipal;
         public string destinoCompleto;
         List<ModeloCliente> cliente;
-        public static ModeloCliente clienteSelecionado;
+        public static ModeloCliente clienteSelecionado = new ModeloCliente();
         public frmClientes(frmTelaPrincipal frmPrincipal)
         {
             InitializeComponent();

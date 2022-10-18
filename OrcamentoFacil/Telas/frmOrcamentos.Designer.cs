@@ -85,11 +85,13 @@ namespace OrcamentoFacil.Telas
             this.cbProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.cbProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbProduto.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbProduto.ForeColor = System.Drawing.Color.White;
             this.cbProduto.FormattingEnabled = true;
             this.cbProduto.Location = new System.Drawing.Point(15, 107);
             this.cbProduto.Name = "cbProduto";
             this.cbProduto.Size = new System.Drawing.Size(274, 24);
             this.cbProduto.TabIndex = 17;
+            this.cbProduto.TextChanged += new System.EventHandler(this.cbProduto_TextChanged);
             // 
             // label1
             // 
@@ -113,7 +115,7 @@ namespace OrcamentoFacil.Telas
             this.txtValorProd.Name = "txtValorProd";
             this.txtValorProd.Size = new System.Drawing.Size(85, 19);
             this.txtValorProd.TabIndex = 14;
-            this.txtValorProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValorProd_KeyPress);
+            this.txtValorProd.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label3
             // 
@@ -142,6 +144,7 @@ namespace OrcamentoFacil.Telas
             this.cbCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.cbCliente.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cbCliente.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCliente.ForeColor = System.Drawing.Color.White;
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(15, 28);
             this.cbCliente.Name = "cbCliente";
@@ -183,7 +186,7 @@ namespace OrcamentoFacil.Telas
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(85, 19);
             this.txtQuantidade.TabIndex = 22;
-            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQuantidade_KeyPress);
+            this.txtQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label5
             // 
@@ -270,7 +273,7 @@ namespace OrcamentoFacil.Telas
             this.txtDesconto.Name = "txtDesconto";
             this.txtDesconto.Size = new System.Drawing.Size(269, 19);
             this.txtDesconto.TabIndex = 29;
-            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDesconto_KeyPress);
+            this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
             // label7
             // 
@@ -416,6 +419,7 @@ namespace OrcamentoFacil.Telas
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmOrcamentos";
             this.Text = "frmOrcamentos";
+            this.Load += new System.EventHandler(this.frmOrcamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);

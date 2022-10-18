@@ -24,8 +24,10 @@ namespace BLL
                         new ModeloUnidadeMedida(
                             idUnidadeMedida: prod["idUnidadeMedida"] == DBNull.Value ? 0 : Convert.ToInt32(prod["idUnidadeMedida"]),
                             descricao: prod["descricaoUnidadeMedida"] == DBNull.Value ? string.Empty : prod["descricaoUnidadeMedida"].ToString(),
-                            sigla: prod["sigla"] == DBNull.Value ? string.Empty : prod["sigla"].ToString())
+                            sigla: prod["sigla"] == DBNull.Value ? string.Empty : prod["sigla"].ToString()),
+                        nomeConcat: $"{prod["idProduto"]} - {prod["descricaoProduto"]} ({prod["sigla"]})"
                         );
+
                     produtos.Add(produto);
                 }
 
