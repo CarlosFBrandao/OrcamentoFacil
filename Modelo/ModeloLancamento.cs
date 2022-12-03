@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace Modelo
 {
-    class ModeloLancamento
+    public class ModeloLancamento
     {
         public int IdMovimento { get; set; }
         public ModeloEmpresa Empresa { get; set; }
         public List<ModeloProduto> Produtos{ get; set; }
         public ModeloCliente Cliente { get; set; }
+
+        public ModeloLancamento()
+        {
+            Produtos = new List<ModeloProduto>();
+        }
     }
+
 }

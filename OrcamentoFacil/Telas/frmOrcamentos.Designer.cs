@@ -29,13 +29,18 @@ namespace OrcamentoFacil.Telas
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.cbProduto = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtValorProd = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtValor = new System.Windows.Forms.Label();
+            this.lbValor = new System.Windows.Forms.Label();
             this.cbCliente = new System.Windows.Forms.ComboBox();
             this.txtUnd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +48,6 @@ namespace OrcamentoFacil.Telas
             this.label5 = new System.Windows.Forms.Label();
             this.btnAdicionarProduto = new System.Windows.Forms.Button();
             this.btnRemoverProduto = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.txtValorBruto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtDesconto = new System.Windows.Forms.TextBox();
@@ -56,17 +60,24 @@ namespace OrcamentoFacil.Telas
             this.label10 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.dtGridProtudos = new System.Windows.Forms.DataGridView();
+            this.IdProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descricaoProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sigla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorUnd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QTD = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridProtudos)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(568, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(602, 28);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(286, 148);
+            this.dataGridView1.Size = new System.Drawing.Size(252, 148);
             this.dataGridView1.TabIndex = 0;
             // 
             // label2
@@ -74,7 +85,7 @@ namespace OrcamentoFacil.Telas
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(565, 9);
+            this.label2.Location = new System.Drawing.Point(599, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 16);
             this.label2.TabIndex = 8;
@@ -89,7 +100,7 @@ namespace OrcamentoFacil.Telas
             this.cbProduto.FormattingEnabled = true;
             this.cbProduto.Location = new System.Drawing.Point(15, 107);
             this.cbProduto.Name = "cbProduto";
-            this.cbProduto.Size = new System.Drawing.Size(274, 24);
+            this.cbProduto.Size = new System.Drawing.Size(305, 24);
             this.cbProduto.TabIndex = 17;
             this.cbProduto.TextChanged += new System.EventHandler(this.cbProduto_TextChanged);
             // 
@@ -110,7 +121,7 @@ namespace OrcamentoFacil.Telas
             this.txtValorProd.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtValorProd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorProd.ForeColor = System.Drawing.Color.White;
-            this.txtValorProd.Location = new System.Drawing.Point(386, 112);
+            this.txtValorProd.Location = new System.Drawing.Point(417, 112);
             this.txtValorProd.MaxLength = 10;
             this.txtValorProd.Name = "txtValorProd";
             this.txtValorProd.Size = new System.Drawing.Size(85, 19);
@@ -128,16 +139,16 @@ namespace OrcamentoFacil.Telas
             this.label3.TabIndex = 13;
             this.label3.Text = "Cliente:";
             // 
-            // txtValor
+            // lbValor
             // 
-            this.txtValor.AutoSize = true;
-            this.txtValor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtValor.ForeColor = System.Drawing.Color.White;
-            this.txtValor.Location = new System.Drawing.Point(383, 88);
-            this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(44, 16);
-            this.txtValor.TabIndex = 12;
-            this.txtValor.Text = "Valor:";
+            this.lbValor.AutoSize = true;
+            this.lbValor.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValor.ForeColor = System.Drawing.Color.White;
+            this.lbValor.Location = new System.Drawing.Point(414, 88);
+            this.lbValor.Name = "lbValor";
+            this.lbValor.Size = new System.Drawing.Size(44, 16);
+            this.lbValor.TabIndex = 12;
+            this.lbValor.Text = "Valor:";
             // 
             // cbCliente
             // 
@@ -148,7 +159,7 @@ namespace OrcamentoFacil.Telas
             this.cbCliente.FormattingEnabled = true;
             this.cbCliente.Location = new System.Drawing.Point(15, 28);
             this.cbCliente.Name = "cbCliente";
-            this.cbCliente.Size = new System.Drawing.Size(547, 24);
+            this.cbCliente.Size = new System.Drawing.Size(578, 24);
             this.cbCliente.TabIndex = 18;
             // 
             // txtUnd
@@ -158,7 +169,7 @@ namespace OrcamentoFacil.Telas
             this.txtUnd.Enabled = false;
             this.txtUnd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUnd.ForeColor = System.Drawing.Color.White;
-            this.txtUnd.Location = new System.Drawing.Point(295, 112);
+            this.txtUnd.Location = new System.Drawing.Point(326, 112);
             this.txtUnd.MaxLength = 10;
             this.txtUnd.Name = "txtUnd";
             this.txtUnd.Size = new System.Drawing.Size(85, 19);
@@ -169,7 +180,7 @@ namespace OrcamentoFacil.Telas
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(292, 88);
+            this.label4.Location = new System.Drawing.Point(323, 88);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(40, 16);
             this.label4.TabIndex = 19;
@@ -181,7 +192,7 @@ namespace OrcamentoFacil.Telas
             this.txtQuantidade.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQuantidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQuantidade.ForeColor = System.Drawing.Color.White;
-            this.txtQuantidade.Location = new System.Drawing.Point(477, 112);
+            this.txtQuantidade.Location = new System.Drawing.Point(508, 112);
             this.txtQuantidade.MaxLength = 10;
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(85, 19);
@@ -193,7 +204,7 @@ namespace OrcamentoFacil.Telas
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(474, 88);
+            this.label5.Location = new System.Drawing.Point(505, 88);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 16);
             this.label5.TabIndex = 21;
@@ -207,12 +218,13 @@ namespace OrcamentoFacil.Telas
             this.btnAdicionarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAdicionarProduto.Font = new System.Drawing.Font("Arial", 10F);
             this.btnAdicionarProduto.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.btnAdicionarProduto.Location = new System.Drawing.Point(298, 146);
+            this.btnAdicionarProduto.Location = new System.Drawing.Point(329, 146);
             this.btnAdicionarProduto.Name = "btnAdicionarProduto";
             this.btnAdicionarProduto.Size = new System.Drawing.Size(129, 30);
             this.btnAdicionarProduto.TabIndex = 23;
             this.btnAdicionarProduto.Text = "Add Produto";
             this.btnAdicionarProduto.UseVisualStyleBackColor = false;
+            this.btnAdicionarProduto.Click += new System.EventHandler(this.btnAdicionarProduto_Click);
             // 
             // btnRemoverProduto
             // 
@@ -222,21 +234,12 @@ namespace OrcamentoFacil.Telas
             this.btnRemoverProduto.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnRemoverProduto.Font = new System.Drawing.Font("Arial", 10F);
             this.btnRemoverProduto.ForeColor = System.Drawing.Color.OrangeRed;
-            this.btnRemoverProduto.Location = new System.Drawing.Point(433, 146);
+            this.btnRemoverProduto.Location = new System.Drawing.Point(464, 146);
             this.btnRemoverProduto.Name = "btnRemoverProduto";
             this.btnRemoverProduto.Size = new System.Drawing.Size(129, 30);
             this.btnRemoverProduto.TabIndex = 24;
             this.btnRemoverProduto.Text = "Excluir Produto";
             this.btnRemoverProduto.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(12, 182);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(550, 365);
-            this.dataGridView2.TabIndex = 25;
             // 
             // txtValorBruto
             // 
@@ -245,10 +248,10 @@ namespace OrcamentoFacil.Telas
             this.txtValorBruto.Enabled = false;
             this.txtValorBruto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorBruto.ForeColor = System.Drawing.Color.White;
-            this.txtValorBruto.Location = new System.Drawing.Point(585, 225);
+            this.txtValorBruto.Location = new System.Drawing.Point(602, 225);
             this.txtValorBruto.MaxLength = 10;
             this.txtValorBruto.Name = "txtValorBruto";
-            this.txtValorBruto.Size = new System.Drawing.Size(269, 19);
+            this.txtValorBruto.Size = new System.Drawing.Size(252, 19);
             this.txtValorBruto.TabIndex = 27;
             // 
             // label6
@@ -256,7 +259,7 @@ namespace OrcamentoFacil.Telas
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(582, 206);
+            this.label6.Location = new System.Drawing.Point(599, 206);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 16);
             this.label6.TabIndex = 26;
@@ -268,10 +271,10 @@ namespace OrcamentoFacil.Telas
             this.txtDesconto.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtDesconto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDesconto.ForeColor = System.Drawing.Color.White;
-            this.txtDesconto.Location = new System.Drawing.Point(585, 278);
+            this.txtDesconto.Location = new System.Drawing.Point(602, 278);
             this.txtDesconto.MaxLength = 10;
             this.txtDesconto.Name = "txtDesconto";
-            this.txtDesconto.Size = new System.Drawing.Size(269, 19);
+            this.txtDesconto.Size = new System.Drawing.Size(252, 19);
             this.txtDesconto.TabIndex = 29;
             this.txtDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_KeyPress);
             // 
@@ -280,7 +283,7 @@ namespace OrcamentoFacil.Telas
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(582, 259);
+            this.label7.Location = new System.Drawing.Point(599, 259);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 16);
             this.label7.TabIndex = 28;
@@ -293,10 +296,10 @@ namespace OrcamentoFacil.Telas
             this.txtValorLiquido.Enabled = false;
             this.txtValorLiquido.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorLiquido.ForeColor = System.Drawing.Color.White;
-            this.txtValorLiquido.Location = new System.Drawing.Point(585, 331);
+            this.txtValorLiquido.Location = new System.Drawing.Point(602, 331);
             this.txtValorLiquido.MaxLength = 10;
             this.txtValorLiquido.Name = "txtValorLiquido";
-            this.txtValorLiquido.Size = new System.Drawing.Size(269, 19);
+            this.txtValorLiquido.Size = new System.Drawing.Size(252, 19);
             this.txtValorLiquido.TabIndex = 31;
             // 
             // label8
@@ -304,7 +307,7 @@ namespace OrcamentoFacil.Telas
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(582, 312);
+            this.label8.Location = new System.Drawing.Point(599, 312);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(129, 16);
             this.label8.TabIndex = 30;
@@ -329,9 +332,9 @@ namespace OrcamentoFacil.Telas
             "10X",
             "11X",
             "12X"});
-            this.comboParcelas.Location = new System.Drawing.Point(585, 381);
+            this.comboParcelas.Location = new System.Drawing.Point(602, 381);
             this.comboParcelas.Name = "comboParcelas";
-            this.comboParcelas.Size = new System.Drawing.Size(269, 24);
+            this.comboParcelas.Size = new System.Drawing.Size(252, 24);
             this.comboParcelas.TabIndex = 33;
             // 
             // label9
@@ -339,7 +342,7 @@ namespace OrcamentoFacil.Telas
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(582, 362);
+            this.label9.Location = new System.Drawing.Point(599, 362);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(67, 16);
             this.label9.TabIndex = 32;
@@ -352,10 +355,10 @@ namespace OrcamentoFacil.Telas
             this.txtValorParcelas.Enabled = false;
             this.txtValorParcelas.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtValorParcelas.ForeColor = System.Drawing.Color.White;
-            this.txtValorParcelas.Location = new System.Drawing.Point(585, 434);
+            this.txtValorParcelas.Location = new System.Drawing.Point(602, 434);
             this.txtValorParcelas.MaxLength = 10;
             this.txtValorParcelas.Name = "txtValorParcelas";
-            this.txtValorParcelas.Size = new System.Drawing.Size(269, 19);
+            this.txtValorParcelas.Size = new System.Drawing.Size(252, 19);
             this.txtValorParcelas.TabIndex = 35;
             // 
             // label10
@@ -363,7 +366,7 @@ namespace OrcamentoFacil.Telas
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(582, 415);
+            this.label10.Location = new System.Drawing.Point(599, 415);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(103, 16);
             this.label10.TabIndex = 34;
@@ -377,12 +380,132 @@ namespace OrcamentoFacil.Telas
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnImprimir.Font = new System.Drawing.Font("Arial", 10F);
             this.btnImprimir.ForeColor = System.Drawing.Color.SpringGreen;
-            this.btnImprimir.Location = new System.Drawing.Point(647, 495);
+            this.btnImprimir.Location = new System.Drawing.Point(666, 495);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(129, 30);
             this.btnImprimir.TabIndex = 36;
             this.btnImprimir.Text = "Imprimir";
             this.btnImprimir.UseVisualStyleBackColor = false;
+            // 
+            // dtGridProtudos
+            // 
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.Gray;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Yellow;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Olive;
+            this.dtGridProtudos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
+            this.dtGridProtudos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
+            this.dtGridProtudos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.dtGridProtudos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
+            this.dtGridProtudos.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dtGridProtudos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridProtudos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            this.dtGridProtudos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtGridProtudos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdProduto,
+            this.descricaoProduto,
+            this.Sigla,
+            this.ValorUnd,
+            this.QTD,
+            this.valor});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.WindowFrame;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.ControlLightLight;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridProtudos.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dtGridProtudos.Location = new System.Drawing.Point(12, 182);
+            this.dtGridProtudos.MultiSelect = false;
+            this.dtGridProtudos.Name = "dtGridProtudos";
+            this.dtGridProtudos.ReadOnly = true;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridProtudos.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            this.dtGridProtudos.RowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.dtGridProtudos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(70)))));
+            this.dtGridProtudos.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridProtudos.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.dtGridProtudos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.DodgerBlue;
+            this.dtGridProtudos.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.White;
+            this.dtGridProtudos.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridProtudos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtGridProtudos.Size = new System.Drawing.Size(581, 343);
+            this.dtGridProtudos.TabIndex = 37;
+            // 
+            // IdProduto
+            // 
+            this.IdProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.IdProduto.DataPropertyName = "IdProduto";
+            this.IdProduto.FillWeight = 10F;
+            this.IdProduto.HeaderText = "Código";
+            this.IdProduto.MinimumWidth = 10;
+            this.IdProduto.Name = "IdProduto";
+            this.IdProduto.ReadOnly = true;
+            this.IdProduto.Width = 80;
+            // 
+            // descricaoProduto
+            // 
+            this.descricaoProduto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.descricaoProduto.DataPropertyName = "Descricao";
+            this.descricaoProduto.FillWeight = 300F;
+            this.descricaoProduto.HeaderText = "Descrição";
+            this.descricaoProduto.Name = "descricaoProduto";
+            this.descricaoProduto.ReadOnly = true;
+            this.descricaoProduto.Width = 150;
+            // 
+            // Sigla
+            // 
+            this.Sigla.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.Sigla.DataPropertyName = "UnidadeMedida";
+            this.Sigla.HeaderText = "UND";
+            this.Sigla.Name = "Sigla";
+            this.Sigla.ReadOnly = true;
+            this.Sigla.Width = 80;
+            // 
+            // ValorUnd
+            // 
+            this.ValorUnd.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.ValorUnd.DataPropertyName = "Valor";
+            this.ValorUnd.HeaderText = "Val Und";
+            this.ValorUnd.Name = "ValorUnd";
+            this.ValorUnd.ReadOnly = true;
+            this.ValorUnd.Width = 80;
+            // 
+            // QTD
+            // 
+            this.QTD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.QTD.DataPropertyName = "Quantidade";
+            this.QTD.HeaderText = "QTD";
+            this.QTD.Name = "QTD";
+            this.QTD.ReadOnly = true;
+            this.QTD.Width = 80;
+            // 
+            // valor
+            // 
+            this.valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.valor.DataPropertyName = "ValorTotal";
+            this.valor.HeaderText = "Val Tot";
+            this.valor.Name = "valor";
+            this.valor.ReadOnly = true;
+            this.valor.Width = 80;
             // 
             // frmOrcamentos
             // 
@@ -390,6 +513,7 @@ namespace OrcamentoFacil.Telas
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(26)))), ((int)(((byte)(26)))));
             this.ClientSize = new System.Drawing.Size(866, 559);
+            this.Controls.Add(this.dtGridProtudos);
             this.Controls.Add(this.btnImprimir);
             this.Controls.Add(this.txtValorParcelas);
             this.Controls.Add(this.label10);
@@ -401,7 +525,6 @@ namespace OrcamentoFacil.Telas
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtValorBruto);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.btnRemoverProduto);
             this.Controls.Add(this.btnAdicionarProduto);
             this.Controls.Add(this.txtQuantidade);
@@ -413,7 +536,7 @@ namespace OrcamentoFacil.Telas
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtValorProd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.lbValor);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -421,7 +544,7 @@ namespace OrcamentoFacil.Telas
             this.Text = "frmOrcamentos";
             this.Load += new System.EventHandler(this.frmOrcamentos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtGridProtudos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -435,7 +558,7 @@ namespace OrcamentoFacil.Telas
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtValorProd;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label txtValor;
+        private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.ComboBox cbCliente;
         private System.Windows.Forms.TextBox txtUnd;
         private System.Windows.Forms.Label label4;
@@ -443,7 +566,6 @@ namespace OrcamentoFacil.Telas
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnAdicionarProduto;
         private System.Windows.Forms.Button btnRemoverProduto;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox txtValorBruto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtDesconto;
@@ -456,5 +578,12 @@ namespace OrcamentoFacil.Telas
         private System.Windows.Forms.Label label10;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.DataGridView dtGridProtudos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoProduto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sigla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorUnd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn QTD;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valor;
     }
 }
