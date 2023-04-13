@@ -160,7 +160,7 @@
       <Project>{dbe1af49-2338-4b2e-8b87-0203b3bb74a5}</Project>
       <Name>Modelo</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Meus Projetos\OrcamentoFacil\Funcoes\Funcoes.csproj">
+    <ProjectReference Include="..\Funcoes\Funcoes.csproj">
       <Project>{0993c5b0-8704-4926-8cbc-1d8d02c464af}</Project>
       <Name>Funcoes</Name>
     </ProjectReference>

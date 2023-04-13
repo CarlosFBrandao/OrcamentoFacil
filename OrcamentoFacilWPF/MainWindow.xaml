@@ -1,0 +1,17 @@
+﻿<Window x:Class="OrcamentoFacilWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OrcamentoFacilWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800" Style="{StaticResource StyleWindow}">
+    <Grid>
+        <Button Content="X" Margin="0,10,10,0" Style="{StaticResource StyleButtonWindow}" Width="15"/>
+        <Button x:Name="btnMaximizar" Margin="0,14,35,0" Style="{StaticResource StyleButtonWindow}" Height="12" Width="13" MouseLeave="Button_MouseEvent" MouseEnter="Button_MouseEvent" PreviewMouseDown="Button_Pressed" PreviewMouseUp="Button_Pressed">
+            <Button.Content>
+                <Image Source="{StaticResource imgMaximizar}"/>
+            </Button.Content>
+        </Button>
+    </Grid>
+</Window>
