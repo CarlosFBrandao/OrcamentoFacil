@@ -27,18 +27,50 @@ namespace OrcamentoFacilWPF
 
         private void Button_MouseEvent(object sender, MouseEventArgs e)
         {
-            if (e.RoutedEvent == Mouse.MouseEnterEvent)
-                btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizarPressed") };
+            if (WindowState == WindowState.Maximized)
+            {
+                if (e.RoutedEvent == Mouse.MouseEnterEvent)
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgRestaurarWindowPressed") };
+                else
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgRestaurarWindow") };
+            }
             else
-                btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizar") };
+            {
+                if (e.RoutedEvent == Mouse.MouseEnterEvent)
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizarPressed") };
+                else
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizar") };
+            }
         }
 
         private void Button_Pressed(object sender, MouseButtonEventArgs e)
         {
-            if(e.RoutedEvent == Mouse.PreviewMouseDownEvent)
-                btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizar") };
+            if (WindowState == WindowState.Maximized)
+            {
+                if (e.RoutedEvent == Mouse.PreviewMouseDownEvent)
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizar") };
+                else
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizarPressed") };
+                WindowState = WindowState.Normal;
+            }
             else
-                btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgMaximizarPressed") };
+            {
+                if (e.RoutedEvent == Mouse.PreviewMouseDownEvent)
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgRestaurarWindow") };
+                else
+                    btnMaximizar.Content = new Image { Source = (DrawingImage)Application.Current.FindResource("imgRestaurarWindowPressed") };
+                WindowState = WindowState.Maximized;
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
