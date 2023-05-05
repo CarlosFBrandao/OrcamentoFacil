@@ -5,20 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OrcamentoFacilWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Style="{StaticResource StyleWindow}" MinWidth="800" MinHeight="450">
+        Title="MainWindow" Height="700" Width="1273" Style="{StaticResource StyleWindow}" MinWidth="800" MinHeight="450">
     <Grid>
-        <Button Content="X" Margin="0,10,10,0" Style="{StaticResource StyleButtonWindow}" Width="auto" Click="Button_Click_1"/>
-        <Button x:Name="btnMaximizar" Margin="0,14,35,0" Style="{StaticResource StyleButtonWindow}" Height="12" Width="13" MouseLeave="Button_MouseEvent" MouseEnter="Button_MouseEvent" PreviewMouseUp="Button_Pressed">
-            <Button.Content>
-                <Image Source="{StaticResource imgMaximizar}"/>
-            </Button.Content>
-        </Button>
-        <Button Content="-" Style="{StaticResource StyleButtonWindow}" Margin="0,-3,59,0" Width="auto" Height="32" FontSize="30" Click="Button_Click"/>
-        <Grid HorizontalAlignment="Left" Width="162" Background="#FF11152F" Margin="0,0,0,0">
+        <Grid Width="auto" Height="29" VerticalAlignment="Top" HorizontalAlignment="Stretch" Background="#212121">
+            <Button Content="X" Margin="0,0,13,0" Style="{StaticResource StyleButtonWindow}" Width="9" Click="Button_Click_1" VerticalAlignment="Center"/>
+            <Button x:Name="btnMaximizar" Margin="0,0,35,0" Style="{StaticResource StyleButtonWindow}" Height="12" Width="13" MouseLeave="Button_MouseEvent" MouseEnter="Button_MouseEvent" PreviewMouseUp="Button_Pressed" VerticalAlignment="Center">
+                <Button.Content>
+                    <Image Source="{StaticResource imgMaximizar}"/>
+                </Button.Content>
+            </Button>
+            <Button Content="-" Style="{StaticResource StyleButtonWindow}" Margin="0,-8,63,0" Width="auto" Height="32" FontSize="30" Click="Button_Click"/>
+        </Grid>
+        <Grid HorizontalAlignment="Left" Width="162" Background="#292929" Margin="0,29,0,0">
             <Border BorderBrush="Black" BorderThickness="2"/>
         </Grid>
-        <Grid Margin="167,40,0,0" x:Name="GridTelas">
-            <local:UcCadClientes VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Grid x:Name="GridTelas" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="162,29, 0,0" >
+            <Border BorderBrush="Black" BorderThickness="2"/>
+            <local:UcCadClientes VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.Column="0" Grid.Row="0" Height="Auto" Width="Auto"/>
         </Grid>
     </Grid>
 </Window>

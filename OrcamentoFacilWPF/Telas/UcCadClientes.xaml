@@ -3,11 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:OrcamentoFacilWPF"
+             xmlns:local="clr-namespace:OrcamentoFacilWPF" xmlns:local1="clr-namespace:OrcamentoFacilWPF"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid Style="{StaticResource StyleGridUC}" Background="White">
-        <Label Content="Nome:" Style="{StaticResource StyleLabelFormulario}" Margin="0,0,731,408" Height="32" Width="59"/>
-        <TextBox x:Name="txtNome" Margin="0,0,417,387" Style="{StaticResource StyleTextBoxFormulario}" Width="373"/>
+             Style="{StaticResource StyleUserControl}"
+             d:DesignHeight="671" d:DesignWidth="1111">
+    <Grid Style="{StaticResource StyleGridUC}" x:Name="GridPrincipal">
+        <Rectangle Style="{StaticResource StyleRectangle}"/>
+        <Grid x:Name="GridDadosBasicos" Height="150" Style="{StaticResource StyleGridUC}" Margin="5,38,5,0">
+            <Rectangle Style="{StaticResource StyleRectangle}"/>
+            <Label Content="Dados Básicos:" Style="{StaticResource StyleLabelFormulario}" Margin="0,2,0,0"/>
+            <Label Content="Nome:" Style="{StaticResource StyleLabelFormulario}" Margin="10,35,0,0" />
+            <TextBox x:Name="txtNome" Style="{StaticResource StyleTextBoxFormulario}" Margin="10,0,681,0" VerticalAlignment="Center"/>
+            <Label Content="CPF/CNPJ:" Style="{StaticResource StyleLabelFormulario}" Margin="422,35,0,0"/>
+            <TextBox x:Name="txtCpfCnpj" Style="{StaticResource StyleTextBoxFormulario}" Margin="415,0,377,0" VerticalAlignment="Center"/>
+        </Grid>
+        <Grid x:Name="Endereco" Margin="95,484,0,0" Height="159" VerticalAlignment="Top" HorizontalAlignment="Left" Width="582">
+            <Rectangle HorizontalAlignment="Center" Height="136" Margin="0,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="570"/>
+            <Label Content="Endereço:" Style="{StaticResource StyleLabelFormulario}" Margin="10,-5,0,0" />
+            <Label Content="CEP:" Style="{StaticResource StyleLabelFormulario}" Margin="18,24,0,0" />
+            <local:ucTxtCep x:Name="ucTxtCep" Margin="18,53,0,0" Height="21" VerticalAlignment="Top" HorizontalAlignment="Left" Width="108"/>
+            <Label Content="Rua:" Style="{StaticResource StyleLabelFormulario}" Margin="131,24,0,0" />
+            <TextBox x:Name="txtRua" Style="{StaticResource StyleTextBoxFormulario}" Width="284" Margin="131,53,0,0"/>
+            <Label Content="Número:" Style="{StaticResource StyleLabelFormulario}" Margin="420,24,0,0" />
+            <TextBox x:Name="txtNumero" Style="{StaticResource ResourceKey=StyleTextBoxFormulario}" Margin="420,53,0,0" Width="148"/>
+            <Label Content="Complemento:" Style="{StaticResource StyleLabelFormulario}" Margin="18,79,0,0" />
+            <TextBox x:Name="txtComplemento" Style="{StaticResource ResourceKey=StyleTextBoxFormulario}" Width="180" Margin="18,108,0,0"/>
+            <Label Content="Cidade:" Style="{StaticResource StyleLabelFormulario}" Margin="203,79,0,0" />
+            <TextBox x:Name="txtCidade" Style="{StaticResource ResourceKey=StyleTextBoxFormulario}" Width="180" Margin="203,108,0,0"/>
+            <Label Content="Bairro:" Style="{StaticResource StyleLabelFormulario}" Margin="388,79,0,0" />
+            <TextBox x:Name="txtBairro" Style="{StaticResource ResourceKey=StyleTextBoxFormulario}" Width="180" Margin="388,108,0,0"/>
+        </Grid>
+        <Grid x:Name="Contato" Margin="26,210,25,106">
+            <Label Content="Contato:" Style="{StaticResource StyleLabelFormulario}" Margin="10,-6,501,0" RenderTransformOrigin="0.524,0.205" Height="29" HorizontalAlignment="Stretch" />
+            <Label Content="Telefone:" Style="{StaticResource StyleLabelFormulario}" Margin="18,21,487,0" HorizontalAlignment="Stretch" />
+            <local:UcTxtTelefone  x:Name="txtContato" Margin="18,50,345,0" Height="21" VerticalAlignment="Top"/>
+            <Label Content="E-mail:" Style="{StaticResource StyleLabelFormulario}" Margin="242,21,280,0" HorizontalAlignment="Stretch" />
+            <TextBox x:Name="txtEmail" Style="{StaticResource ResourceKey=StyleTextBoxFormulario}" Margin="242,50,14,0" HorizontalAlignment="Stretch"/>
+
+        </Grid>
+        <Label Content="Cadastro de Clientes:" Style="{StaticResource StyleLabelFormulario}" Margin="13,2,0,0"/>
     </Grid>
 </UserControl>

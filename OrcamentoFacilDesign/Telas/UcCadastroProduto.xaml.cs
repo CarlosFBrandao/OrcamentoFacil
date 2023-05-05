@@ -1,5 +1,4 @@
-﻿using OrcamentoFacilWPF;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,16 +13,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace OrcamentoFacilWPF
+namespace OrcamentoFacilDesign
 {
     /// <summary>
-    /// Interação lógica para UcCadClientes.xam
+    /// Interação lógica para UcCadastroProduto.xam
     /// </summary>
-    public partial class UcCadClientes : UserControl
+    public partial class UcCadastroProduto : UserControl
     {
-        public UcCadClientes()
+        public UcCadastroProduto()
         {
             InitializeComponent();
+        }
+
+        private void txtValor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (!double.TryParse(txtValor.Text, out double value))
+            {
+                txtValor.Text = "";
+            }
         }
     }
 }

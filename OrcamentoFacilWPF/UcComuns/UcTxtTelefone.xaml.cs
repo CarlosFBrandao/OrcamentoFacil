@@ -1,5 +1,4 @@
-﻿using OrcamentoFacilWPF;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +16,11 @@ using System.Windows.Shapes;
 namespace OrcamentoFacilWPF
 {
     /// <summary>
-    /// Interação lógica para UcCadClientes.xam
+    /// Interação lógica para UcTxtTelefone.xam
     /// </summary>
-    public partial class UcCadClientes : UserControl
+    public partial class UcTxtTelefone : UserControl
     {
-        public UcCadClientes()
+        public UcTxtTelefone()
         {
             InitializeComponent();
         }
