@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using static System.Net.Mime.MediaTypeNames;
+using Funcoes;
 
 namespace OrcamentoFacilDesign
 {
@@ -26,6 +16,8 @@ namespace OrcamentoFacilDesign
         private const int CPF_LENGTH = 11;
         private const int CNPJ_LENGTH = 14;
         private const int CEP_LENGTH = 8;
+        private const int CELULAR_LENGTH = 11;
+        private const int TELEFONE_LENGTH = 10;
         private Key[] KeysNavegacao = { Key.Left, Key.Right, Key.Up, Key.Down, Key.Back, Key.Delete };
 
         public UcCadastroCliente()
@@ -58,7 +50,7 @@ namespace OrcamentoFacilDesign
             }
             if (((FrameworkElement)sender).Name == "txtCpfCnpj")
             {
-                string text = txtCpfCnpj.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+                string text = Utils.RetornaInteiro(txtCpfCnpj.Text).ToString();
                 if (e.Text == "\b" && text.Length > 0)
                 {
                     if (text.Length > 0)
@@ -74,9 +66,27 @@ namespace OrcamentoFacilDesign
                     return;
                 }
             }
+            else if (((FrameworkElement)sender).Name == "txtTelefone") 
+            {
+                string text = Utils.RetornaInteiro(txtTelefone.Text).ToString(); 
+                if (e.Text == "\b" && text.Length > 0)
+                {
+                    if (text.Length > 0)
+                    {
+                        text = text.Substring(0, text.Length - 1);
+                    }
+                    txtTelefone.Text = text;
+                    e.Handled = true;
+                }
+                if (text.Length >= CELULAR_LENGTH)
+                {
+                    e.Handled = true;
+                    return;
+                }
+            }
             else
             {
-                string text = txtCep.Text.Replace("-", "").Replace(".", "");
+                string text = Utils.RetornaInteiro(txtCep.Text).ToString();
                 if (e.Text == "\b" && text.Length > 0)
                 {
                     if (text.Length > 0)
@@ -103,6 +113,13 @@ namespace OrcamentoFacilDesign
                     txtCpfCnpj.SelectionStart = 0;
                 }
             }
+            else if (((FrameworkElement)sender).Name == "txtTelefone")
+            {
+                if (string.IsNullOrEmpty(txtTelefone.Text))
+                {
+                    txtTelefone.SelectionStart = 0;
+                }
+            }
             else
             {
                 if (string.IsNullOrEmpty(txtCep.Text))
@@ -121,7 +138,7 @@ namespace OrcamentoFacilDesign
                     if (((FrameworkElement)sender).Name == "txtCpfCnpj")
                     {
 
-                        string text = txtCpfCnpj.Text.Replace(".", "").Replace("-", "").Replace("/", "");
+                        string text = Utils.RetornaInteiro(txtCpfCnpj.Text).ToString();
 
                         if (text.Length == CPF_LENGTH)
                         {
@@ -137,9 +154,28 @@ namespace OrcamentoFacilDesign
                         }
                         txtCpfCnpj.SelectionStart = txtCpfCnpj.Text.Length;
                     }
+                    else if (((FrameworkElement)sender).Name == "txtTelefone")
+                    {
+
+                        string text = Utils.RetornaInteiro(txtTelefone.Text).ToString();
+
+                        if (text.Length == TELEFONE_LENGTH)
+                        {
+                            txtTelefone.Text = string.Format("{0:\\(00\\)\\ 0000\\-0000}", long.Parse(text));
+                        }
+                        else if (text.Length == CELULAR_LENGTH)
+                        {
+                            txtTelefone.Text = string.Format("{0:\\(00\\)\\ 00000\\-0000}", long.Parse(text));
+                        }
+                        else
+                        {
+                            txtTelefone.Text = text;
+                        }
+                        txtTelefone.SelectionStart = txtTelefone.Text.Length;
+                    }
                     else
                     {
-                        string text = txtCep.Text.Replace("-", "").Replace(".", "");
+                        string text = Utils.RetornaInteiro(txtCep.Text).ToString();
                         if (txtCep.Text.Length == CEP_LENGTH)
                         {
                             txtCep.Text = string.Format("{0:00000\\-000}", long.Parse(text));

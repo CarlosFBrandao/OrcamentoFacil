@@ -20,8 +20,10 @@ namespace OrcamentoFacilDesign
     /// </summary>
     public partial class UcCadastroProduto : UserControl
     {
-        public UcCadastroProduto()
+        private Window Owner;
+        public UcCadastroProduto( Window windowOwner)
         {
+            Owner = windowOwner;
             InitializeComponent();
         }
 
@@ -31,6 +33,12 @@ namespace OrcamentoFacilDesign
             {
                 txtValor.Text = "";
             }
+        }
+
+        private void btnCadastrarUnd_Click(object sender, RoutedEventArgs e)
+        {
+            TelaCadUnidadeMedida cadUnidadeMedida = new TelaCadUnidadeMedida(Owner);
+            cadUnidadeMedida.ShowDialog();
         }
     }
 }

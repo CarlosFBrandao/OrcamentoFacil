@@ -21,6 +21,9 @@ namespace OrcamentoFacilDesign
     /// </summary>
     public partial class MainWindow : Window
     {
+        private const string frmCliente = "frmCliente";
+        private const string frmProduto = "frmProduto";
+        private string TelaSelecionada;
         public MainWindow()
         {
             InitializeComponent();
@@ -59,21 +62,24 @@ namespace OrcamentoFacilDesign
             }
         }
 
-        private void tabClientes_GotFocus(object sender, RoutedEventArgs e)
+        private void tabClientes_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-           
+            if (TelaSelecionada != frmCliente)
+            {
+                UcCadastroCliente ucCadCliente = new UcCadastroCliente();
+                tabClientes.Content = ucCadCliente;
+                TelaSelecionada = frmCliente;
+            }
         }
 
-        private void StackPanel_MouseDown(object sender, MouseButtonEventArgs e)
+        private void tabProdutos_PreviewMouseUp(object sender, MouseButtonEventArgs e)
         {
-            UcCadastroCliente ucCadCliente = new UcCadastroCliente();
-            tabClientes.Content = ucCadCliente;
-        }
-
-        private void tabProdutos_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            UcCadastroProduto ucCadProduto = new UcCadastroProduto();
-            tabProdutos.Content = ucCadProduto;
+            if (TelaSelecionada != frmProduto)
+            {
+                UcCadastroProduto ucCadProduto = new UcCadastroProduto(this);
+                tabProdutos.Content = ucCadProduto;
+                TelaSelecionada = frmProduto;
+            }
         }
     }
 }

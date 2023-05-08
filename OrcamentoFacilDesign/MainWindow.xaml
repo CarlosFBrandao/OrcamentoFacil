@@ -14,6 +14,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="MainWindow" Height="775" Width="1119"
         Background="{DynamicResource MaterialDesignPaper}"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None">
     <Grid>
         <Grid VerticalAlignment="Top" Height="30" MouseLeftButtonDown="Grid_MouseLeftButtonDown" Background="{StaticResource MaterialDesignDarkSeparatorBackground}">
@@ -33,27 +34,21 @@
         </Grid>
         <materialDesign:Card Margin="0,30,0,0">
             <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left">
-                <TabItem  x:Name="tabClientes" >
+                <TabItem  x:Name="tabClientes" PreviewMouseUp="tabClientes_PreviewMouseUp">
                     <TabItem.Header>
-                        <StackPanel Width="auto" Height="auto" MouseDown="StackPanel_MouseDown">
+                        <StackPanel Width="auto" Height="auto">
                             <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="People" />
                             <TextBlock HorizontalAlignment="Center" Text="Clientes" />
                         </StackPanel>
                     </TabItem.Header>
-                    <StackPanel VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" Margin="0,0,0,0">
-                        <!--<local:UcCadastroCliente HorizontalAlignment="Stretch" Width="Auto" Height="auto"/>-->
-                    </StackPanel>
                 </TabItem>
-                <TabItem x:Name ="tabProdutos">
+                <TabItem x:Name ="tabProdutos" PreviewMouseUp="tabProdutos_PreviewMouseUp">
                     <TabItem.Header>
-                        <StackPanel Width="auto" Height="auto" MouseDown="tabProdutos_MouseDown">
+                        <StackPanel Width="auto" Height="auto">
                             <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Package" />
                             <TextBlock HorizontalAlignment="Center" Text="Produtos" />
                         </StackPanel>
                     </TabItem.Header>
-                    <StackPanel Width="Auto" Height="Auto" Margin="1,1,1,1">
-                        <!--<local:UcCadastroProduto HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Width="Auto" Height="Auto" MaxHeight="{StaticResource PopupTopBottomMargin}" Margin="1,1,1,1"/>-->
-                    </StackPanel>
                 </TabItem>
             </TabControl>
         </materialDesign:Card>

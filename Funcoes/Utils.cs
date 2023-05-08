@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -28,6 +29,21 @@ namespace Funcoes
             {
                 e.Handled = true;
             }
+        }
+        public static string RetornaInteiro(string input)
+        {
+
+            var digitos = new StringBuilder();
+
+            foreach (char c in input)
+            {
+                if (char.IsDigit(c))
+                {
+                    digitos.Append(c);
+                }
+            }
+
+            return digitos.ToString();
         }
     }
 }
