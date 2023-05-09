@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="OrcamentoFacilDesign.Telas.UcOrcamento"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrcamentoFacilDesign.Telas"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}" MinHeight="705" MinWidth="956" Width="Auto" Height="Auto" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+    <Grid>
+        <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" Margin="1,1,1,1">
+            <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto" Margin="1,1,1,1">
+                <Rectangle Stroke="Black" Margin="10,20,10,10"/>
+                <Label Content="Orçamento:" Margin="15,8,0,0" HorizontalAlignment="Left" Width="78" Height="21" VerticalAlignment="Top" Background="{StaticResource MaterialDesignDarkBackground}"/>
+                <Grid x:Name="gridDadosBasicos" Height="283" VerticalAlignment="Top" HorizontalAlignment="Left" Width="688">
+                    <Rectangle Stroke="Black"   Margin="20,60,0,0" HorizontalAlignment="Left" Width="648" Cursor="Hand" />
+                    <Label Content="Dados Básicos:" Style="{StaticResource MaterialDesignLabel}" Margin="25,47,0,0" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="100" Background="{StaticResource MaterialDesignDarkBackground}"/>
+                    <ComboBox x:Name="cmbClientes" materialDesign:HintAssist.Hint="Cliente" Style="{StaticResource MaterialDesignFilledComboBox}" Margin="39,81,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="614"/>
+                    <ComboBox x:Name="cmbProdutos" materialDesign:HintAssist.Hint="Produto" Style="{StaticResource MaterialDesignFilledComboBox}" Margin="39,154,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="289"/>
+                    <TextBox x:Name="txtUnidadeMedida" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="UND" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" Margin="368,154,0,0" AllowDrop="False" HorizontalAlignment="Left" Width="120"/>
+                    <TextBox x:Name="txtValor" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Valor" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" Margin="528,154,0,0" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="125"/>
+                    <TextBox x:Name="txtQuantidade" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Quantidade" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" Margin="39,229,0,0" HorizontalAlignment="Left" Width="130" AllowDrop="False"/>
+                    <TextBox x:Name="txtValorTotal" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Valor Total" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" Margin="211,229,0,0" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="125"/>
+                    <Button x:Name="btnAddProduto" Foreground="#FF08FF08" Content="Add Produto" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="Adicionar Produto" Margin="368,229,0,0" HorizontalAlignment="Left" Width="125" Height="44" VerticalAlignment="Top" />
+                    <Button x:Name="btnRemoverProduto" Foreground="#FFE85D76" Content="Remover" IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="Remover Produto" Margin="528,229,0,0" HorizontalAlignment="Left" Width="125" Height="44" VerticalAlignment="Top" />
+                </Grid>
+                <Grid x:Name="gridLancamentos" Width ="Auto" Margin="663,0,10,0" VerticalAlignment="Top" Height="283" HorizontalAlignment="Stretch">
+                    <Rectangle Stroke="Black" Margin="20,58,20,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    <ListView Margin="20,58,20,0" x:Name="listOrcamentos" Width="Auto" Height="Auto" Cursor="Hand">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Código" Width="Auto" DisplayMemberBinding ="{Binding Codigo}"/>
+                                <GridViewColumn Header="Data" Width="Auto" DisplayMemberBinding ="{Binding Data}"/>
+                                <GridViewColumn Header="Cliente" Width="Auto" DisplayMemberBinding ="{Binding Cliente}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+                <Grid x:Name="gridPagamento" Height="85" VerticalAlignment="Top" Width="Auto" Margin="0,288,0,0">
+                    <Rectangle Stroke="Black"   Margin="20,12,20,0" />
+                    <Label Content="Totais:" Style="{StaticResource MaterialDesignLabel}" Margin="25,0,0,0" Height="23" VerticalAlignment="Top" HorizontalAlignment="Left" Width="68" Background="{StaticResource MaterialDesignDarkBackground}"/>
+                    <TextBox x:Name="txtValorTotalBruto" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Total Lançamento" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="150" Margin="38,28,0,0"/>
+                    <TextBox x:Name="txtDesconto" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Desconto(%)" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="150" Margin="233,28,0,0"/>
+                    <TextBox x:Name="txtTotalLiquido" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Total Líquido" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="150" Margin="423,28,0,0"/>
+                    <ComboBox x:Name="cmbParcelas" materialDesign:HintAssist.Hint="Parcelas" Style="{StaticResource MaterialDesignFilledComboBox}" VerticalAlignment="Top" HorizontalAlignment="Left" Width="150" Margin="618,28,0,0">
+                        <ComboBoxItem Content="1X"/>
+                        <ComboBoxItem Content="2X"/>
+                        <ComboBoxItem Content="3X"/>
+                        <ComboBoxItem Content="4X"/>
+                        <ComboBoxItem Content="5X"/>
+                        <ComboBoxItem Content="6X"/>
+                        <ComboBoxItem Content="7X"/>
+                        <ComboBoxItem Content="8X"/>
+                        <ComboBoxItem Content="9X"/>
+                        <ComboBoxItem Content="10X"/>
+                        <ComboBoxItem Content="11x"/>
+                        <ComboBoxItem Content="12X"/>
+                    </ComboBox>
+                    <TextBox x:Name="txtValorParcelas" MaxWidth="305" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Valor da Pacela" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" TextChanged="txtValor_TextChanged" HorizontalAlignment="Left" Width="150" Margin="813,28,0,0"/>
+                </Grid>
+                <Grid Margin="18,378,20,20" Width="Auto" Height="Auto">
+                    <Rectangle Stroke="Black" Margin="0,10,0,0" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Width="Auto" Height="Auto"/>
+                    <ListView Margin="5,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="listViewClientes" Width="Auto" Height="Auto">
+                        <ListView.View>
+                            <GridView>
+                                <GridViewColumn Header="Código" Width="Auto" DisplayMemberBinding ="{Binding Codigo}"/>
+                                <GridViewColumn Header="Descrição" Width="Auto" DisplayMemberBinding ="{Binding Descricao}"/>
+                                <GridViewColumn Header="UND" Width="Auto" DisplayMemberBinding ="{Binding Und}"/>
+                                <GridViewColumn Header="Valor Unitário" Width="Auto" DisplayMemberBinding ="{Binding valorUnd}"/>
+                                <GridViewColumn Header="Quantidade" Width="Auto" DisplayMemberBinding ="{Binding Quantidade}"/>
+                                <GridViewColumn Header="Valor Total" Width="Auto" DisplayMemberBinding ="{Binding valorTotal}"/>
+                            </GridView>
+                        </ListView.View>
+                    </ListView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -143,5 +143,10 @@ namespace OrcamentoFacil.Telas
             dtGridProtudos.DataSource = listaProd;
             
         }
+
+        private void dtGridProtudos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

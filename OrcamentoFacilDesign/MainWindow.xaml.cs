@@ -1,18 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using OrcamentoFacilDesign.Telas;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using OrcamentoFacilDesign.Telas;
 
 namespace OrcamentoFacilDesign
 {
@@ -23,6 +11,9 @@ namespace OrcamentoFacilDesign
     {
         private const string frmCliente = "frmCliente";
         private const string frmProduto = "frmProduto";
+        private const string frmEmpresa = "frmEmpresa";
+        private const string frmOrcamento = "frmOrcamento";
+
         private string TelaSelecionada;
         public MainWindow()
         {
@@ -79,6 +70,31 @@ namespace OrcamentoFacilDesign
                 UcCadastroProduto ucCadProduto = new UcCadastroProduto(this);
                 tabProdutos.Content = ucCadProduto;
                 TelaSelecionada = frmProduto;
+            }
+        }
+
+        private void tabEmpresa_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (TelaSelecionada != frmEmpresa)
+            {
+                UcCadastroEmpresa ucCadastroEmpresa = new UcCadastroEmpresa();
+                tabEmpresa.Content = ucCadastroEmpresa;
+                TelaSelecionada = frmEmpresa;
+            }
+        }
+
+        private void tabHome_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+
+        private void tabOrcamento_PreviewMouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (TelaSelecionada != frmOrcamento)
+            {
+                UcOrcamento ucOrcamento = new UcOrcamento();
+                tabOrcamento.Content = ucOrcamento;
+                TelaSelecionada = frmOrcamento;
             }
         }
     }

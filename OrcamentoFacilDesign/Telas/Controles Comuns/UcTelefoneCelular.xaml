@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="OrcamentoFacilDesign.Telas.UcTelefoneCelular"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:OrcamentoFacilDesign.Telas"
+             mc:Ignorable="d" 
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+             TextElement.FontWeight="Regular"
+             TextElement.FontSize="13"
+             TextOptions.TextFormattingMode="Ideal"
+             TextOptions.TextRenderingMode="Auto"
+             Background="{DynamicResource MaterialDesignPaper}"
+             FontFamily="{DynamicResource MaterialDesignFont}">
+    <Grid>
+        <TextBox x:Name="txtTelefone" MaxWidth="600" VerticalAlignment="Top" materialDesign:HintAssist.Hint="Telefone/Celular" AcceptsReturn="True" IsEnabled="{Binding Path=IsChecked, ElementName=MaterialDesignFilledTextBoxEnabledComboBox}" Style="{StaticResource MaterialDesignFilledTextBox}" TextWrapping="Wrap" HorizontalAlignment="Left" Width="345" PreviewTextInput="txtTelefone_PreviewTextInput" GotFocus="txtTelefone_txtCep_GotFocus" PreviewKeyUp="txtTelefone_PreviewKeyUp"/>
+    </Grid>
+</UserControl>

@@ -10,32 +10,24 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace OrcamentoFacilDesign.Telas
 {
     /// <summary>
-    /// Lógica interna para TelaCadUnidadeMedida.xaml
+    /// Interação lógica para UcOrcamento.xam
     /// </summary>
-    public partial class TelaCadUnidadeMedida : Window
+    public partial class UcOrcamento : UserControl
     {
-        public TelaCadUnidadeMedida(Window windowOwner)
+        public UcOrcamento()
         {
-            Owner = windowOwner;
             InitializeComponent();
         }
 
-        private void Grid_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        private void txtValor_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (e.ButtonState == MouseButtonState.Pressed)
-            {
-                DragMove();
-            }
-        }
 
-        private void BtnWindowClick(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
     }
 }

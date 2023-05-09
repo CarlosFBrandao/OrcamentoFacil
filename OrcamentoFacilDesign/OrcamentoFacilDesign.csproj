@@ -68,15 +68,29 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Telas\clsTeste.cs" />
+    <Compile Include="Telas\Controles Comuns\UcCep.xaml.cs">
+      <DependentUpon>UcCep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Controles Comuns\UcCpfCnpj.xaml.cs">
+      <DependentUpon>UcCpfCnpj.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\Controles Comuns\UcTelefoneCelular.xaml.cs">
+      <DependentUpon>UcTelefoneCelular.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Telas\TelaCadUnidadeMedida.xaml.cs">
       <DependentUpon>TelaCadUnidadeMedida.xaml</DependentUpon>
     </Compile>
     <Compile Include="Telas\UcCadastroCliente.xaml.cs">
       <DependentUpon>UcCadastroCliente.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Telas\UcCadastroEmpresa.xaml.cs">
+      <DependentUpon>UcCadastroEmpresa.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Telas\UcCadastroProduto.xaml.cs">
       <DependentUpon>UcCadastroProduto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\UcOrcamento.xaml.cs">
+      <DependentUpon>UcOrcamento.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -90,6 +104,18 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Telas\Controles Comuns\UcCep.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Telas\Controles Comuns\UcCpfCnpj.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Telas\Controles Comuns\UcTelefoneCelular.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Telas\TelaCadUnidadeMedida.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,7 +124,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Telas\UcCadastroEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Telas\UcCadastroProduto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Telas\UcOrcamento.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +168,10 @@
     <ProjectReference Include="..\Funcoes\Funcoes.csproj">
       <Project>{0993c5b0-8704-4926-8cbc-1d8d02c464af}</Project>
       <Name>Funcoes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OrcamentoFacil\ControlesComuns\ControlesComuns.csproj">
+      <Project>{b498547e-8a55-4324-9fb6-e8d0d0aaaddc}</Project>
+      <Name>ControlesComuns</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

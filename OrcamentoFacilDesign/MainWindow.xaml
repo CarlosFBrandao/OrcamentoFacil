@@ -32,8 +32,41 @@
                 <materialDesign:PackIcon Kind="WindowMinimize" Foreground="{StaticResource MaterialDesignLightBackground}" Width="15" Height="15"/>
             </Button>
         </Grid>
-        <materialDesign:Card Margin="0,30,0,0">
+        <Grid Height="30" VerticalAlignment="Top" Margin="0,30,0,0" x:Name="gridBtnControle">
+            <Button x:Name="btnIncluir" Margin="85,0,0,0" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" ToolTip="Incluir">
+                <materialDesign:PackIcon Kind="FileDocumentPlusOutline" Foreground="{StaticResource MaterialDesignLightBackground}" Width="24" Height="24"/>
+            </Button>
+            <Button x:Name="btnSalvar" Margin="115,0,0,0" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" ToolTip="Salvar">
+                <materialDesign:PackIcon Kind="ContentSaveOutline" Foreground="{StaticResource MaterialDesignLightBackground}" Width="24" Height="24"/>
+            </Button>
+            <Button x:Name="btnCancelar" Margin="145,0,0,0" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" ToolTip="Cancelar">
+                <materialDesign:PackIcon Kind="ContentSaveOffOutline" Foreground="{StaticResource MaterialDesignLightBackground}" Width="24" Height="24"/>
+            </Button>
+            <Button x:Name="btnExcluir" Margin="175,0,0,0" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" ToolTip="Excluir">
+                <materialDesign:PackIcon Kind="DeleteForeverOutline" Foreground="{StaticResource MaterialDesignLightBackground}" Width="24" Height="24"/>
+            </Button>
+            <Button x:Name="btnImprimir" Margin="205,0,0,0" Style="{StaticResource MaterialDesignIconForegroundButton}" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="25" ToolTip="Imprimir Orçamento">
+                <materialDesign:PackIcon Kind="Printer" Foreground="{StaticResource MaterialDesignLightBackground}" Width="24" Height="24"/>
+            </Button>
+        </Grid>
+        <materialDesign:Card Margin="0,60,0,0">
             <TabControl materialDesign:NavigationRailAssist.ShowSelectionBackground="True" SnapsToDevicePixels="True" Style="{StaticResource MaterialDesignNavigationRailTabControl}" TabStripPlacement="Left">
+                <TabItem  x:Name="tabHome" PreviewMouseUp="tabHome_PreviewMouseUp">
+                    <TabItem.Header>
+                        <StackPanel Width="auto" Height="auto">
+                            <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Home" />
+                            <TextBlock HorizontalAlignment="Center" Text="Home" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem  x:Name="tabEmpresa" PreviewMouseUp="tabEmpresa_PreviewMouseUp">
+                    <TabItem.Header>
+                        <StackPanel Width="auto" Height="auto">
+                            <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="BankOutline" />
+                            <TextBlock HorizontalAlignment="Center" Text="Empresa" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
                 <TabItem  x:Name="tabClientes" PreviewMouseUp="tabClientes_PreviewMouseUp">
                     <TabItem.Header>
                         <StackPanel Width="auto" Height="auto">
@@ -47,6 +80,14 @@
                         <StackPanel Width="auto" Height="auto">
                             <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="Package" />
                             <TextBlock HorizontalAlignment="Center" Text="Produtos" />
+                        </StackPanel>
+                    </TabItem.Header>
+                </TabItem>
+                <TabItem x:Name ="tabOrcamento" PreviewMouseUp="tabOrcamento_PreviewMouseUp" Width="85">
+                    <TabItem.Header>
+                        <StackPanel Width="auto" Height="auto">
+                            <materialDesign:PackIcon Width="24" Height="24" HorizontalAlignment="Center" Kind="FileDocumentOutline" />
+                            <TextBlock HorizontalAlignment="Center" Text="Orçamento" />
                         </StackPanel>
                     </TabItem.Header>
                 </TabItem>

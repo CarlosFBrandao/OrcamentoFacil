@@ -29,8 +29,8 @@
                 <ListView Margin="5,5,5,5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" x:Name="listViewClientes" Width="Auto" Height="Auto">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Código:" Width="Auto" DisplayMemberBinding ="{Binding Codigo}"/>
-                            <GridViewColumn Header="Descrição:" Width="Auto" DisplayMemberBinding ="{Binding Descricao}"/>
+                            <GridViewColumn Header="Código" Width="Auto" DisplayMemberBinding ="{Binding Codigo}"/>
+                            <GridViewColumn Header="Descrição" Width="Auto" DisplayMemberBinding ="{Binding Descricao}"/>
                             <GridViewColumn Header="UND" Width="Auto" DisplayMemberBinding ="{Binding Und}"/>
                             <GridViewColumn Header="Valor Unitario" Width="Auto" DisplayMemberBinding ="{Binding ValorUnitario}"/>
                         </GridView>
